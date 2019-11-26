@@ -8,6 +8,8 @@ using Vivencia19ManhaAPI.Models;
 
 namespace Vivencia19ManhaAPI.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class AnoLetivoController
     {
         Business.AnoLetivoBusiness business = new  Business.AnoLetivoBusiness();

@@ -11,7 +11,7 @@ namespace Vivencia19ManhaAPI.Controllers
     [Route("[controller]")]
     public class CursoController : ControllerBase
     {
-        [httpPost]
+        [HttpPost]
         public void InserirCurso(Models.TbCurso curso)
         {
 

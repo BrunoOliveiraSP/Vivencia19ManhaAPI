@@ -44,5 +44,14 @@ namespace Vivencia19ManhaAPI.Database
 
             db.SaveChanges();
         }
+        public List<Models.TbProfessor> ListarTodos()
+        {
+
+
+            List<Models.TbProfessor> lista =  db.TbProfessor.ToList();
+            return lista;
+            
+
+        }
     }
 }

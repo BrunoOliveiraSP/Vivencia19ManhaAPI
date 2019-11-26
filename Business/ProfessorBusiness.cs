@@ -13,6 +13,23 @@ namespace Vivencia19ManhaAPI.Business
 
         public void Inserir(Models.TbProfessor professor)
         {
+            if(professor.NmProfessor == "")
+                throw new Exception("Nome do professor Não pode ser vaziu");
+
+            if(professor.NmMae == "")
+                throw new Exception("Nome da mãe Não pode ser vaziu");
+
+            if(professor.NmPai == "")
+                throw new Exception("Nome do pai Não pode ser vaziu");   
+
+             if(professor.DsCelular == null)
+                throw new Exception("O Celular Não pode ser vaziu");       
+
+
+
+
+
+
             db.Inserir(professor);
         }
        

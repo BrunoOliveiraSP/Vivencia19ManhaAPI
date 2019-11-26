@@ -33,9 +33,11 @@ namespace Vivencia19ManhaAPI.Controllers
         }
 
         [HttpGet]
-        public List<Models.TbProfessor> LIstarTodos()
+        public List<Models.TbProfessor> ListarTodos()
         {
-             return bussines.ListarTodos();
+             List<Models.TbProfessor> lista = bussines.ListarTodos();
+            return lista;
+
         }
 
         [HttpGet("{nome}")]

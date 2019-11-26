@@ -9,7 +9,7 @@ namespace Vivencia19ManhaAPI.Database
 {
     public class ProfessorDatabase
     {
-        Models.db_a5064d_freiContext db = new Models.db_a5064d_freiContext();
+            db_a5064d_freiContext db = new db_a5064d_freiContext();
 
         public void Inserir(Models.TbProfessor professor)
         {
@@ -58,12 +58,11 @@ namespace Vivencia19ManhaAPI.Database
 	    }
 
         public void Deletar(int id)
-        {
-            if (id == 0)
-                throw new Exception("Id inválido");
-
-                db.Remove(id);
-        } 
+         {
+             Models.TbProfessor r = db.TbProfessor.FirstOrDefault(x =>x.IdProfessor == id);
+             db.TbProfessor.Remove(r);
+             db.SaveChanges();
+         } 
     }
     
 }

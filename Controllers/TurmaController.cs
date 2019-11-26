@@ -22,7 +22,7 @@ namespace Vivencia19ManhaAPI.Controllers
         [HttpGet]
          public List<Models.TbTurma> ConsultarTurma()
         {
-           List<Models.TbTurma> lista =  business.ConsultarTurma(modelo);
+           List<Models.TbTurma> lista =  business.ConsultarTurma();
            return lista;
         }
         [HttpPut]

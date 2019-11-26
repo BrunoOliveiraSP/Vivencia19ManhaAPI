@@ -26,7 +26,7 @@ namespace Vivencia19ManhaAPI.Models
         [Column("dt_fim", TypeName = "date")]
         public DateTime DtFim { get; set; }
         [Column("bt_ativo", TypeName = "bit(1)")]
-        public ulong BtAtivo { get; set; }
+        public bool BtAtivo { get; set; }
         [Required]
         [Column("tp_status", TypeName = "varchar(50)")]
         public string TpStatus { get; set; }

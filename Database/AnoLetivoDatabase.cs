@@ -38,7 +38,7 @@ namespace Vivencia19ManhaAPI.Database
             db.SaveChanges();
         }
         
-        public List<TbAnoLetivo> ConsultarTodos(int id)
+        public List<TbAnoLetivo> ConsultarTodos()
         {
             List<TbAnoLetivo> lista = db.TbAnoLetivo.ToList();
 

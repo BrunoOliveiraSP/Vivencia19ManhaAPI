@@ -850,11 +850,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\teste\\Documents\\repos\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj",
+      "projectUniqueName": "C:\\Users\\teste\\Documents\\Vivencia\\Vivencia19ManhaAPI-1\\Vivencia19ManhaAPI.csproj",
       "projectName": "Vivencia19ManhaAPI",
-      "projectPath": "C:\\Users\\teste\\Documents\\repos\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj",
+      "projectPath": "C:\\Users\\teste\\Documents\\Vivencia\\Vivencia19ManhaAPI-1\\Vivencia19ManhaAPI.csproj",
       "packagesPath": "C:\\Users\\teste\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\teste\\Documents\\repos\\Vivencia19ManhaAPI\\obj\\",
+      "outputPath": "C:\\Users\\teste\\Documents\\Vivencia\\Vivencia19ManhaAPI-1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\teste\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -906,7 +906,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

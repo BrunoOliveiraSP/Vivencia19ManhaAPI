@@ -31,10 +31,18 @@ namespace Vivencia19ManhaAPI.Database
         }
         public void Deletar(int id)
         {
-            if (id == 0)
-                throw new Exception("Id inválido");
+            Models.TbDisciplina tb = db.TbDisciplina.FirstOrDefault(x => x.IdDisciplina == id); 
 
-                // Deletar.Remover(id);
-        }     
+            db.TbDisciplina.Remove(tb);
+        }
+
+        internal List<TbDisciplina> lista(string nome)
+        {
+            
+            if(string.IsNullOrEmpty(nome))
+                return db.TbDisciplina.ToList();
+            return db.TbDisciplina.Where(x => x.NmDisciplina == nome).ToList();
+
+        }
     }
 }

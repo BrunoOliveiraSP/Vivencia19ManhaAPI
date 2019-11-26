@@ -15,6 +15,7 @@ namespace Vivencia19ManhaAPI.Business
         {
             if(Verificar(disciplina))
                 db.Alterar(disciplina);
+                //
         }
 
         public bool Verificar(Models.TbDisciplina disciplina)
@@ -32,13 +33,12 @@ namespace Vivencia19ManhaAPI.Business
             return true;
         }
 
-        public void Deletar(int id)
-        {
-            if (id == 0)
-                throw new ArgumentException("Id inválido");
+        ///public List<Models.TbDisciplina> lista ()
+        //{
+           
 
-                // db.Remover(id);
-        }  
+           // return db.lista();
+        //}  
 
     }
 }

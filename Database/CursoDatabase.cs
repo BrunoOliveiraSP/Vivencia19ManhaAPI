@@ -22,5 +22,15 @@ namespace Vivencia19ManhaAPI.Database
             db.TbCurso.Remove(remover);
             db.SaveChanges();
         }
+        public List<Models.TbCurso> Consultar()
+        {
+            List<Models.TbCurso> Listar = db.TbCurso.ToList();
+            return Listar;
+        }
+        public List<Models.TbCurso> ConsultarPorID (int id)
+        {
+            List<Models.TbCurso> Consultar = db.TbCurso.Where(x => x.IdCurso.Contains(id)).ToList();
+            return Consultar;
+        }
     }
 }

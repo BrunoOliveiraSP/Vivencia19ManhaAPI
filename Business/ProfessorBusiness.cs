@@ -19,6 +19,7 @@ namespace Vivencia19ManhaAPI.Business
 
         public void Alterar(Models.TbProfessor professor)
         {
+            db.Alterar(professor);
         }
 
        

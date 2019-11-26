@@ -27,11 +27,26 @@ namespace Vivencia19ManhaAPI.Business
 
         public void Alterar(TbAnoLetivo anoLetivo)
         {
+            if(anoLetivo.IdAnoLetivo == 0)
+            throw new ArgumentException("ID Inválido");
+
+            if(anoLetivo.NrAno == 0)
+            throw new ArgumentException("Ano Obrigatório");
+
+            if(anoLetivo.DtFim <= anoLetivo.DtInicio)
+            throw new ArgumentException("Data Final Inválida");
+
+            if(anoLetivo.TpStatus == string.Empty)
+            throw new ArgumentException("Status Obrigatório");
+
             database.Alterar(anoLetivo);
         }
 
         public void Deletar(int id)
         {
+            if(id == 0)
+            throw new ArgumentException("ID Inválido");
+            
             database.Deletar(id);
         }
         

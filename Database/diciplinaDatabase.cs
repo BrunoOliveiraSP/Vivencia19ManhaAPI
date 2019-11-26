@@ -6,7 +6,7 @@ namespace Vivencia19ManhaAPI.Database
     {
         public void InserirDisciplina(Models.TbDisciplina disciplina)
         {
-            Models.
+            Models.db_a5064d_freiContext db = new Models.db_a5064d_freiContext();
             db.TbDisciplina.Add(disciplina);
             db.SaveChanges();
         }

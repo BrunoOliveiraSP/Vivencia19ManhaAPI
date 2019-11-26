@@ -51,3 +51,12 @@ C:\Users\teste\Documents\Vivencia\Vivencia19ManhaAPI-1\obj\Debug\netcoreapp3.0\V
 C:\Users\teste\Documents\Vivencia\Vivencia19ManhaAPI-1\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.AssemblyInfo.cs
 C:\Users\teste\Documents\Vivencia\Vivencia19ManhaAPI-1\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.dll
 C:\Users\teste\Documents\Vivencia\Vivencia19ManhaAPI-1\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.pdb
+D:\OneDrive\Documentos\Visual Code\Vivencia19Manha\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.dll
+D:\OneDrive\Documentos\Visual Code\Vivencia19Manha\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\OneDrive\Documentos\Visual Code\Vivencia19Manha\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\OneDrive\Documentos\Visual Code\Vivencia19Manha\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\OneDrive\Documentos\Visual Code\Vivencia19Manha\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\MySqlConnector.dll
+D:\OneDrive\Documentos\Visual Code\Vivencia19Manha\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+D:\OneDrive\Documentos\Visual Code\Vivencia19Manha\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\OneDrive\Documentos\Visual Code\Vivencia19Manha\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Pomelo.JsonObject.dll
+D:\OneDrive\Documentos\Visual Code\Vivencia19Manha\Vivencia19ManhaAPI\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.csproj.CopyComplete

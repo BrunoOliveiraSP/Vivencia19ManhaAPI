@@ -11,8 +11,12 @@ namespace Vivencia19ManhaAPI.Models
         [Key]
         [Column("id_aluno_carometro", TypeName = "int(11)")]
         public int IdAlunoCarometro { get; set; }
+
+
         [Column("id_aluno", TypeName = "int(11)")]
         public int IdAluno { get; set; }
+
+        
         [Required]
         [Column("ds_imagem", TypeName = "varchar(200)")]
         public string DsImagem { get; set; }

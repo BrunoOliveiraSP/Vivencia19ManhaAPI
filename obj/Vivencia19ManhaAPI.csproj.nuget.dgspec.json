@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\teste\\Documents\\Vivencia\\Vivencia19ManhaAPI-1\\Vivencia19ManhaAPI.csproj": {}
   },
   "projects": {
@@ -12,14 +13,32 @@
         "projectPath": "C:\\Users\\teste\\Documents\\Vivencia\\Vivencia19ManhaAPI-1\\Vivencia19ManhaAPI.csproj",
         "packagesPath": "C:\\Users\\teste\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\teste\\Documents\\Vivencia\\Vivencia19ManhaAPI-1\\obj\\",
+=======
+    "D:\\OneDrive\\Documentos\\Visual Code\\Vivencia19Manha\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj": {}
+  },
+  "projects": {
+    "D:\\OneDrive\\Documentos\\Visual Code\\Vivencia19Manha\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\OneDrive\\Documentos\\Visual Code\\Vivencia19Manha\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj",
+        "projectName": "Vivencia19ManhaAPI",
+        "projectPath": "D:\\OneDrive\\Documentos\\Visual Code\\Vivencia19Manha\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj",
+        "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
+        "outputPath": "D:\\OneDrive\\Documentos\\Visual Code\\Vivencia19Manha\\Vivencia19ManhaAPI\\obj\\",
+>>>>>>> b0b8cad0fb2f220e77d2ca58ff5cb33efe1b1aff
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\teste\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

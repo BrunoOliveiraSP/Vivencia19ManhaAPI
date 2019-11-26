@@ -1,12 +1,5 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-
-
-
+using System.Linq.Expressions;
 
 namespace Vivencia19ManhaAPI.Business
 {
@@ -16,6 +9,10 @@ namespace Vivencia19ManhaAPI.Business
 
     public class ProfessorBusiness
     {
-        
+        Database.ProfessorDatabase db = new Database.ProfessorDatabase();
+        public void Inserir(Models.TbProfessor professor)
+        {
+            db.Inserir(professor);
+        }
     }
 }

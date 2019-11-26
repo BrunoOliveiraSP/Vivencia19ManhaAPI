@@ -21,9 +21,6 @@ namespace Vivencia19ManhaAPI.Business
         {
         }
 
-        // public List<Models.TbProfessor> ListarTodos()
-        // {
-        // }
        
     }
 }

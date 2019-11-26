@@ -41,6 +41,7 @@ namespace Vivencia19ManhaAPI.Database
         public List<TbAnoLetivo> ConsultarTodos()
         {
             List<TbAnoLetivo> lista = db.TbAnoLetivo.ToList();
+            
 
             return lista;
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Vivencia19ManhaAPI.Models;
+using System;
 
 namespace Vivencia19ManhaAPI.Business
 {
@@ -12,7 +13,14 @@ namespace Vivencia19ManhaAPI.Business
     
         public void Inserir(TbAnoLetivo anoLetivo)
         {
-            //if(anoLetivo.)
+            if(anoLetivo.NrAno == 0)
+            throw new ArgumentException("Ano Obrigatório");
+
+            if(anoLetivo.DtFim <= anoLetivo.DtInicio)
+            throw new ArgumentException("Data Final Inválida");
+
+            if(anoLetivo.TpStatus == string.Empty)
+            throw new ArgumentException("Status Obrigatório");
 
             database.Inserir(anoLetivo);
         }

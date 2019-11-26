@@ -845,30 +845,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bruno\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\teste\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\OneDrive\\Documentos\\Visual Code\\Vivencia19Manha\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj",
+      "projectUniqueName": "C:\\Users\\teste\\Documents\\repos\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj",
       "projectName": "Vivencia19ManhaAPI",
-      "projectPath": "D:\\OneDrive\\Documentos\\Visual Code\\Vivencia19Manha\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj",
-      "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
-      "outputPath": "D:\\OneDrive\\Documentos\\Visual Code\\Vivencia19Manha\\Vivencia19ManhaAPI\\obj\\",
+      "projectPath": "C:\\Users\\teste\\Documents\\repos\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj",
+      "packagesPath": "C:\\Users\\teste\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\teste\\Documents\\repos\\Vivencia19ManhaAPI\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\teste\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -912,16 +906,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache D:\\OneDrive\\Documentos\\Visual Code\\Vivencia19Manha\\Vivencia19ManhaAPI\\obj\\Vivencia19ManhaAPI.csproj.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

@@ -11,11 +11,16 @@ namespace Vivencia19ManhaAPI.Controllers
     [Route("[controller]")]
     public class ProfessorController : ControllerBase
     {
+       Business.ProfessorBusiness bussines = new Business.ProfessorBusiness();
+
         [HttpPost]
         public void Inserir(Models.TbProfessor professor)
         {
-
+            bussines.Inserir(professor);
         }
+        
+            
+        
 
 
     }

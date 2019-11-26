@@ -11,33 +11,33 @@ namespace Vivencia19ManhaAPI.Database
     {
        db_a5064d_freiContext db = new db_a5064d_freiContext();
 
-       public void Inserir(Models.TbSala modelo)
+       public void Inserir(TbSala modelo)
        {
            db.TbSala.Add(modelo);
            db.SaveChanges();
        }
-        public List<Models.TbSala> Consultar()
+        public List<TbSala> Consultar()
        {
-           List<Models.TbSala> salas = db.TbSala.ToList();
+           List<TbSala> salas = db.TbSala.ToList();
            return salas;
        }
        public void Deletar(int id)
        {
-        //    Models.TbSala sala = db.TbSala.First(t => t.id_sala == id);
-        //    db.TbSala.Remove(sala);
-        //    db.SaveChanges();
+             TbSala sala = db.TbSala.First(t => t.IdSala == id);
+             db.TbSala.Remove(sala);
+             db.SaveChanges();
        }
-       public void Alterar(Models.TbSala modelo)
+       public void Alterar(TbSala modelo)
        {
-        //  Models.TbSala sala = db.TbSala.First(t => t.id_sala == id);
-
-        //  sala.nm_local = modelo.nm_local;
-        //  sala.nm_sala = modelo.nm_sala;
-        //  sala.nr_capacidade_maxima = modelo.nr_capacidade_maxima;
-        //  sala.bt_ativo = modelo.bt_ativo;
-        //  sala.dt_inclusao = modelo.dt_inclusao;
-        //  sala.dt_alteracao = modelo.dt_alteracao;
-        //  sala.id_funcionario_alteracao = modelo.id_funcionario_alteracao;
+          TbSala sala = db.TbSala.First(t => t.IdSala == modelo.IdSala);
+            
+          sala.NmLocal = modelo.NmLocal;
+          sala.NmSala = modelo.NmSala;
+          sala.NrCapacidadeMaxima = modelo.NrCapacidadeMaxima;
+          sala.BtAtivo = modelo.BtAtivo;
+          sala.DtInclusao = modelo.DtInclusao;
+          sala.DtAlteracao = modelo.DtAlteracao;
+          sala.IdFuncionarioAlteracao = modelo.IdFuncionarioAlteracao;
 
          db.SaveChanges();
 

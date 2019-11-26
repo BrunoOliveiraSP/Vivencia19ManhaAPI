@@ -13,33 +13,33 @@ namespace Vivencia19ManhaAPI.Business
         
     Database.SalaDatabase a = new SalaDatabase();
 
-      public void Inserir(Models.TbSala modelo)
+      public void Inserir(TbSala modelo)
       {
-        //  if(modelo.nm_local == string.Empty)
-        //  throw new ArgumentException("Coloque o nome do local");
+          if(modelo.NmLocal == string.Empty)
+          throw new ArgumentException("Coloque o nome do local");
 
-        //  else if(modelo.nm_sala == string.Empty)
-        //  throw new ArgumentException("Coloque o nome da sala");
+          else if(modelo.NmSala == string.Empty)
+          throw new ArgumentException("Coloque o nome da sala");
 
-        //  else if(modelo.nr_capacidade_maxima <= 0)
-        //  throw new ArgumentException("A capacidade maxima nao pode ser igual a zero");
+         else if(modelo.NrCapacidadeMaxima <= 0)
+          throw new ArgumentException("A capacidade maxima nao pode ser igual a zero");
 
-        //  else if( modelo.bt_ativo == null )
-        //  throw new ArgumentException("");
+          else if( modelo.BtAtivo == 0 )
+          throw new ArgumentException("Responda se a sala esta ativa ou não");
 
-        //  else if(modelo.dt_inclusao == null)
-        //  throw new ArgumentException("A data nao pode ser vazia");
+          else if(modelo.DtInclusao == null)
+          throw new ArgumentException("A data nao pode ser vazia");
 
-        //  else if(modelo.dt_alteracao == null )
-        //  throw new ArgumentException("A data nao pode ser vazia");
+          else if(modelo.DtAlteracao == null )
+          throw new ArgumentException("A data nao pode ser vazia");
 
-        //  else if( modelo.id_funcionario_alteracao <= 0)
-        //  throw new ArgumentException("O id do funcionario nao pode ser 0");
+          else if( modelo.IdFuncionarioAlteracao <= 0)
+          throw new ArgumentException("O id do funcionario nao pode ser 0");
          
-        //  a.Inserir(modelo);
+          a.Inserir(modelo);
       }
 
-       public List<Models.TbSala> Consultar()
+       public List<TbSala> Consultar()
        {
            return null;
        }
@@ -50,7 +50,7 @@ namespace Vivencia19ManhaAPI.Business
 
            a.Deletar(id);
        }
-       public void Alterar(Models.TbSala modelo)
+       public void Alterar(TbSala modelo)
        {
            a.Alterar(modelo);
        }

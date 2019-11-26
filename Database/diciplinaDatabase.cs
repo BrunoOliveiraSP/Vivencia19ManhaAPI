@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Vivencia19ManhaAPI.Models;
@@ -26,5 +29,12 @@ namespace Vivencia19ManhaAPI.Database
 
             db.SaveChanges();           
         }
+        public void Deletar(int id)
+        {
+            if (id == 0)
+                throw new Exception("Id inválido");
+
+                Deletar.Remover(id);
+        }     
     }
 }

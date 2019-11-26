@@ -19,7 +19,7 @@ namespace Vivencia19ManhaAPI.Database
 
         public void Alterar(Models.TbProfessor professor)
         {
-            Models.TbProfessor novo = db.TbProfessor.FirstOrDefalt(x => x.IdProfessor == professor.IdProfessor);
+            Models.TbProfessor novo = db.TbProfessor.FirstOrDefault(x => x.IdProfessor == professor.IdProfessor);
 
             novo.NmProfessor = professor.NmProfessor;
             novo.DsCelular = professor.DsCelular;

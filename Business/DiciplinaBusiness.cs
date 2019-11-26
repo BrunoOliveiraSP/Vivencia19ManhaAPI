@@ -15,6 +15,7 @@ namespace Vivencia19ManhaAPI.Business
         {
             if(Verificar(disciplina))
                 db.Alterar(disciplina);
+                //
         }
 
         public bool Verificar(Models.TbDisciplina disciplina)

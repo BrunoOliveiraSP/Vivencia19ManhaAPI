@@ -25,7 +25,7 @@ namespace Vivencia19ManhaAPI.Controllers
      }
      [HttpGet]
      public List<Models.TbSala> Consultar()
-     {]
+     {    
         Database.SalaDatabase db = new Database.SalaDatabase();
         return db.Consultar();
      }

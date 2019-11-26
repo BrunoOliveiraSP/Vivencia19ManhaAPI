@@ -23,23 +23,27 @@ namespace Vivencia19ManhaAPI.Controllers
         [HttpPut]
         public void Alterar(Models.TbProfessor professor)
         {
-
+            bussines.Alterar(professor);
         }
 
-        [HttpDelete]
-        public void Deletar(Models.TbProfessor professor)
+        [HttpDelete("{id}")]
+        public void Remover(int id)
         {
-
+            bussines.Deletar(id);
         }
 
         [HttpGet]
         public List<Models.TbProfessor> LIstarTodos()
         {
              return bussines.ListarTodos();
-
-
         }
 
-        
+        [HttpGet("{nome}")]
+	    public List<Models.TbProfessor> ConsultarPorNome(string nome)
+	    {
+	    	List<Models.TbProfessor> list = bussines.ConsultarPorNome(nome);
+
+	    	return list;
+	    }
     }
 }

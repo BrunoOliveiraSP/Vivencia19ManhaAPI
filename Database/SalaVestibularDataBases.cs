@@ -34,11 +34,11 @@ namespace Vivencia19ManhaAPI.Database
        {
          Models.TbSalaVestibular sala = db.TbSalaVestibular.First(t => t.IdSalaVestibular == modelo.IdSalaVestibular);
 
-        //  sala.id_sala = modelo.id_sala;
-        //  sala.ds_periodo = modelo.ds_periodo;
-        //  sala.nr_capacidade_maxima = modelo.nr_capacidade_maxima;
-        //  sala.nr_ordem = modelo.nr_ordem;
-        //  sala.qt_inscritos = modelo.qt_inscritos;
+          sala.IdSala = modelo.IdSala;
+          sala.DsPeriodo = modelo.DsPeriodo;
+          sala.NrOrdem = modelo.NrOrdem;
+          sala.QtInscritos = modelo.QtInscritos;
+          
         
          db.SaveChanges();
 

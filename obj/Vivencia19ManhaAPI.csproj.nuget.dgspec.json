@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\teste\\Documents\\repos\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj": {}
+    "c:\\Users\\teste\\Documents\\repos\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\teste\\Documents\\repos\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj": {
+    "c:\\Users\\teste\\Documents\\repos\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\teste\\Documents\\repos\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj",
+        "projectUniqueName": "c:\\Users\\teste\\Documents\\repos\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj",
         "projectName": "Vivencia19ManhaAPI",
-        "projectPath": "C:\\Users\\teste\\Documents\\repos\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj",
+        "projectPath": "c:\\Users\\teste\\Documents\\repos\\Vivencia19ManhaAPI\\Vivencia19ManhaAPI.csproj",
         "packagesPath": "C:\\Users\\teste\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\teste\\Documents\\repos\\Vivencia19ManhaAPI\\obj\\",
+        "outputPath": "c:\\Users\\teste\\Documents\\repos\\Vivencia19ManhaAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\teste\\AppData\\Roaming\\NuGet\\NuGet.Config"

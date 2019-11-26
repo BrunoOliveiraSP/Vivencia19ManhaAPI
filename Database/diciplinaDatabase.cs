@@ -34,7 +34,7 @@ namespace Vivencia19ManhaAPI.Database
             if (id == 0)
                 throw new Exception("Id inválido");
 
-                Deletar.Remover(id);
+                // Deletar.Remover(id);
         }     
     }
 }

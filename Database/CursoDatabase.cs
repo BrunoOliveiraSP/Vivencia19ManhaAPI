@@ -29,7 +29,7 @@ namespace Vivencia19ManhaAPI.Database
         }
         public List<Models.TbCurso> ConsultarPorID (int id)
         {
-            List<Models.TbCurso> Consultar = db.TbCurso.Where(x => x.IdCurso.Contains(id)).ToList();
+            List<Models.TbCurso> Consultar = db.TbCurso.Where(x => x.IdCurso == id).ToList();
             return Consultar;
         }
     }

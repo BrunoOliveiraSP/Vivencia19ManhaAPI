@@ -3,6 +3,10 @@ using System.Linq.Expressions;
 
 namespace Vivencia19ManhaAPI.Business
 {
+    Database.ProfessorDatabase db = new Database.ProfessorDatabase();
+
+
+
     public class ProfessorBusiness
     {
         Database.ProfessorDatabase db = new Database.ProfessorDatabase();

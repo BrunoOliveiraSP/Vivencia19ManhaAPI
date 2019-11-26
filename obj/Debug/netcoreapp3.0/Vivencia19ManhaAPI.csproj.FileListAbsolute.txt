@@ -43,3 +43,11 @@ C:\Users\teste\Documents\repos\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Pomelo
 C:\Users\teste\Documents\repos\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Pomelo.JsonObject.dll
 C:\Users\teste\Documents\repos\Vivencia19ManhaAPI\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.csproj.CopyComplete
 C:\Users\teste\Documents\repos\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\teste\Documents\Vivencia\Vivencia19ManhaAPI-1\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.csprojAssemblyReference.cache
+C:\Users\teste\Documents\Vivencia\Vivencia19ManhaAPI-1\obj\Debug\netcoreapp3.0\staticwebassets\Vivencia19ManhaAPI.StaticWebAssets.Manifest.cache
+C:\Users\teste\Documents\Vivencia\Vivencia19ManhaAPI-1\obj\Debug\netcoreapp3.0\staticwebassets\Vivencia19ManhaAPI.StaticWebAssets.xml
+C:\Users\teste\Documents\Vivencia\Vivencia19ManhaAPI-1\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\teste\Documents\Vivencia\Vivencia19ManhaAPI-1\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.AssemblyInfoInputs.cache
+C:\Users\teste\Documents\Vivencia\Vivencia19ManhaAPI-1\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.AssemblyInfo.cs
+C:\Users\teste\Documents\Vivencia\Vivencia19ManhaAPI-1\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.dll
+C:\Users\teste\Documents\Vivencia\Vivencia19ManhaAPI-1\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.pdb

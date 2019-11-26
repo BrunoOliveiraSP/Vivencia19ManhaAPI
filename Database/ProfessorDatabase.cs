@@ -46,12 +46,24 @@ namespace Vivencia19ManhaAPI.Database
         }
         public List<Models.TbProfessor> ListarTodos()
         {
-
-
             List<Models.TbProfessor> lista =  db.TbProfessor.ToList();
             return lista;
-            
-
         }
+
+        public List<Models.TbProfessor> ConsultarPorNome(string nome)
+	    {
+		List<Models.TbProfessor> list = db.TbProfessor.Where(x => x.NmProfessor.Contains(nome)).ToList();
+
+		return list;
+	    }
+
+        public void Deletar(int id)
+        {
+            if (id == 0)
+                throw new Exception("Id inválido");
+
+                db.Remove(id);
+        } 
     }
+    
 }

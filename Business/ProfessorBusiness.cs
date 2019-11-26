@@ -16,8 +16,12 @@ namespace Vivencia19ManhaAPI.Business
             db.Inserir(professor);
         }
        
-        public void Remover(int ID )
+        public void Deletar(int id)
         {
+            if (id == 0)
+                throw new ArgumentException("Id inválido");
+
+                db.Deletar(id);
         }
 
         public void Alterar(Models.TbProfessor professor)
@@ -26,13 +30,15 @@ namespace Vivencia19ManhaAPI.Business
         }
         public List<Models.TbProfessor> ListarTodos()
         {
-
             List<Models.TbProfessor> lista = db.ListarTodos();
             return lista;
-
-
         }
+        
+	    public List<Models.TbProfessor> ConsultarPorNome(string nome)
+	    {
+		    List<Models.TbProfessor> list = db.ConsultarPorNome(nome);
 
-       
+		    return list;
+    	}
     }
 }

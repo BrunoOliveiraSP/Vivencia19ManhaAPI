@@ -1,4 +1,10 @@
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Vivencia19ManhaAPI.Models;
+using System.Linq;
+using Vivencia19ManhaAPI.Database;
 
 namespace Vivencia19ManhaAPI.Business
 {

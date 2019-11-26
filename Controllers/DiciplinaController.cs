@@ -32,11 +32,7 @@ namespace Vivencia19ManhaAPI.Controllers
     [Route("[Controller]")]
     public class DiciplinaController
     {
-        [HttpDelete("{id}")]
-        public void Remover(int id)
-        {
-            bus.Remover(id);
-        }
+       
     } 
 >>>>>>> d9fdf1b76d69c8a4d30c0b7c63121ed23d498fce
     }

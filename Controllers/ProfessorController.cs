@@ -17,7 +17,7 @@ namespace Vivencia19ManhaAPI.Controllers
         [HttpPost]
         public void Inserir(Models.TbProfessor professor)
         {
-            
+            Business.Inserir(professor);
         }
 
         [HttpPut]

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Vivencia19ManhaAPI.Models;
 
 namespace Vivencia19ManhaAPI.Controllers
 {
@@ -16,12 +17,25 @@ namespace Vivencia19ManhaAPI.Controllers
         [HttpPost]
         public void Inserir(Models.TbProfessor professor)
         {
-            bussines.Inserir(professor);
-        }
-        
             
-        
+        }
 
+        [HttpPut]
+        public void Alterar(Models.TbProfessor professor)
+        {
 
+        }
+
+        [HttpDelete]
+        public void Deletar(Models.TbProfessor professor)
+        {
+
+        }
+
+        [HttpGet]
+        public void ListarTodos(Models.TbProfessor professor)
+        {
+
+        }
     }
 }

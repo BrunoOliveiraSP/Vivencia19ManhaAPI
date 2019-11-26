@@ -62,6 +62,7 @@ namespace Vivencia19ManhaAPI.Database
              Models.TbProfessor r = db.TbProfessor.FirstOrDefault(x =>x.IdProfessor == id);
              db.TbProfessor.Remove(r);
              db.SaveChanges();
+             
          } 
     }
     

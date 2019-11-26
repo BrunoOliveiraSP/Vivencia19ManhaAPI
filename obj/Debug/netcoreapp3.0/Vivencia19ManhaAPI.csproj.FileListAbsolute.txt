@@ -60,3 +60,30 @@ D:\OneDrive\Documentos\Visual Code\Vivencia19Manha\Vivencia19ManhaAPI\bin\Debug\
 D:\OneDrive\Documentos\Visual Code\Vivencia19Manha\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Pomelo.EntityFrameworkCore.MySql.dll
 D:\OneDrive\Documentos\Visual Code\Vivencia19Manha\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Pomelo.JsonObject.dll
 D:\OneDrive\Documentos\Visual Code\Vivencia19Manha\Vivencia19ManhaAPI\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.csproj.CopyComplete
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\appsettings.Development.json
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\appsettings.json
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Properties\launchSettings.json
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Vivencia19ManhaAPI.exe
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Vivencia19ManhaAPI.deps.json
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Vivencia19ManhaAPI.runtimeconfig.json
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Vivencia19ManhaAPI.runtimeconfig.dev.json
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Vivencia19ManhaAPI.dll
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Vivencia19ManhaAPI.pdb
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\MySqlConnector.dll
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\bin\Debug\netcoreapp3.0\Pomelo.JsonObject.dll
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.csprojAssemblyReference.cache
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\obj\Debug\netcoreapp3.0\staticwebassets\Vivencia19ManhaAPI.StaticWebAssets.Manifest.cache
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\obj\Debug\netcoreapp3.0\staticwebassets\Vivencia19ManhaAPI.StaticWebAssets.xml
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.AssemblyInfoInputs.cache
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.AssemblyInfo.cs
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.RazorTargetAssemblyInfo.cache
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.csproj.CopyComplete
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.dll
+C:\Users\teste\Documents\VivenciaAPI\Vivencia19ManhaAPI\obj\Debug\netcoreapp3.0\Vivencia19ManhaAPI.pdb

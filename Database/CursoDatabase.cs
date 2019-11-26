@@ -10,6 +10,11 @@ namespace Vivencia19ManhaAPI.Database
 
             db.SaveChanges();
         }
-        
+        public void Remover(int id)
+        {
+            Models.TbCurso remover = db.TbCurso.FirstOrDefault(x => x.IdCurso == id);
+            db.TbCurso.Remove(remover);
+            db.SaveChanges();
+        }
     }
 }

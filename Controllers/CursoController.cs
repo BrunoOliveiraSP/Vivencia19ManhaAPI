@@ -9,19 +9,13 @@ namespace Vivencia19ManhaAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ProfessorController : ControllerBase
+    public class CursoController : ControllerBase
     {
-       Business.ProfessorBusiness bussines = new Business.ProfessorBusiness();
-
-        [HttpPost]
-        public void Inserir(Models.TbProfessor professor)
+        [httpPost]
+        public void InserirCurso(Models.TbCurso curso)
         {
-            bussines.Inserir(professor);
+
         }
         
-            
-        
-
-
     }
 }

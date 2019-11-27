@@ -11,6 +11,49 @@ namespace Vivencia19ManhaAPI.Business
     public class CursoBusiness
     {
         Database.CursoDatabase db = new Database.CursoDatabase();
+
+        public void InserirCurso(Models.TbCurso curso)
+        {
+            if (curso.IdFuncionarioAlteracao <= 0)
+            {
+                throw new Exception("Valor inválido para o ID do funcionario");
+            }
+            if(curso.NmCurso == string.Empty)
+            {
+                throw new Exception("Insira o nome de um curso");
+            }
+            if(curso.NrCapacidadeMaxima <= 0 || curso.NrCapacidadeMaxima > 50)
+            {
+                throw new Exception("Insira um valor váildo para o limite maximo");
+            }
+
+            bool validar = db.ValidarNmCurso(curso);
+            if(validar == true)
+            {
+                throw new Exception("Nome do curso já validado no sistema");
+            }
+
+            db.InserirCurso(curso);
+        }
+
+        public void Alterar(int id , Models.TbCurso curso)
+        {
+            if (curso.IdFuncionarioAlteracao <= 0)
+            {
+                throw new Exception("Valor inválido para o ID do funcionario");
+            }
+            if(curso.NmCurso == string.Empty)
+            {
+                throw new Exception("Insira o nome de um curso");
+            }
+            if(curso.NrCapacidadeMaxima <= 0 || curso.NrCapacidadeMaxima > 50)
+            {
+                throw new Exception("Insira um valor váildo para o limite maximo");
+            }
+
+            db.Alterar(id, curso);
+
+        }
         public void Remover(int id)
         {
             if(id == 0) { 

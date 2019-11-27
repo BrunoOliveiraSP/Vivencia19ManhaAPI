@@ -11,11 +11,37 @@ namespace Vivencia19ManhaAPI.Controllers
     [Route("[controller]")]
     public class CursoController : ControllerBase
     {
+        Business.CursoBusiness business = new Business.CursoBusiness();
         [HttpPost]
         public void InserirCurso(Models.TbCurso curso)
         {
-
+            business.InserirCurso(curso);
         }
         
+        [HttpPut]
+        public void AlterarCurso(int id, Models.TbCurso curso)
+        {
+            business.Alterar(id, curso);
+        }
+        [HttpDelete]
+        public void RemoverCurso(int id)
+        {
+            business.Remover(id);
+        }
+        [HttpGet]
+        public List<Models.TbCurso> ConsultarCurso()
+        {
+            List<Models.TbCurso> consulta = business.Consultar();
+
+            return consulta;
+        }
+        
+        [HttpGet]
+        public List<Models.TbCurso> ConsultarPorId(int id)
+        {
+            List<Models.TbCurso> consulta = business.ConsultarPorID(id);
+
+            return consulta;
+        }
     }
 }

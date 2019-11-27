@@ -35,10 +35,18 @@ namespace Vivencia19ManhaAPI.Controllers
         }
 
          [HttpGet("{nome}")]
-        public List<Models.TbDisciplina> lista (string nome)
+        public List<Models.TbDisciplina> listarPorNome (string nome)
         {
          
          List<Models.TbDisciplina> list = busi.listarPorNome(nome);
+         return list;
+
+        }
+        [HttpGet]
+        public List<Models.TbDisciplina> listar ()
+        {
+         
+         List<Models.TbDisciplina> list = busi.listar();
          return list;
 
         }

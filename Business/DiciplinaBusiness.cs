@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Vivencia19ManhaAPI.Database;
+using Vivencia19ManhaAPI.Models;
 
 
 namespace Vivencia19ManhaAPI.Business
@@ -54,14 +56,14 @@ namespace Vivencia19ManhaAPI.Business
 
            return list;
         }
-        //  public List< Models.TbDisciplina> listar()
-        // {
+         public List< Models.TbDisciplina> listar()
+        {
             
-        //     List<Models.TbDisciplina> lista = db.listar;
-        //     return lista;
+             List<Models.TbDisciplina> lista = db.listar();
+             return lista;
             
 
-        // }  
+         }  
 
     }
 }

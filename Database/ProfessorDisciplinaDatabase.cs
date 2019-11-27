@@ -29,8 +29,12 @@ namespace Vivencia19ManhaAPI.Database
             }
             public void Alterar(Models.TbProfessorDisciplina profdisc)
             {
-               // db.TbProfessorDisciplina.Add(profdisc);
-              //  db.SaveChanges();
+               Models.TbProfessorDisciplina novo = db.TbProfessorDisciplina.FirstOrDefault(x => x.IdProfessorDisciplina == profdisc.IdProfessorDisciplina);
+
+               novo.IdProfessor = profdisc.IdProfessor;
+               novo.IdDisciplina = profdisc.IdDisciplina;
+
+               db.SaveChanges();
             }
 
             public List<Models.TbProfessorDisciplina> ListarTodos()

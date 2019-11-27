@@ -32,7 +32,8 @@ namespace Vivencia19ManhaAPI.Business
             {
                 throw new Exception("Nome do curso já validado no sistema");
             }
-
+            //AAAAAAAA
+        
             db.InserirCurso(curso);
         }
 

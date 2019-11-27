@@ -1,4 +1,10 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+
 
 namespace Vivencia19ManhaAPI.Business
 {
@@ -33,12 +39,29 @@ namespace Vivencia19ManhaAPI.Business
             return true;
         }
 
-        ///public List<Models.TbDisciplina> lista ()
-        //{
-           
+        public void remover (int id)
+        {
+          if(id == 0)
+          throw new ArgumentException("id invalido");
+           db.Deletar(id);
 
-           // return db.lista();
-        //}  
+                       
+        }
+
+        public List<Models.TbDisciplina> listarPorNome (string nome)
+        {
+           List<Models.TbDisciplina> list = db.listaPorNome(nome);
+
+           return list;
+        }
+        //  public List< Models.TbDisciplina> listar()
+        // {
+            
+        //     List<Models.TbDisciplina> lista = db.listar;
+        //     return lista;
+            
+
+        // }  
 
     }
 }

@@ -16,6 +16,22 @@ namespace Vivencia19ManhaAPI.Database
 
             db.SaveChanges();
         }
+
+        public bool ValidarNmCurso(Models.TbCurso curso)
+        {
+            bool validar = db.TbCurso.Any(x => x.NmCurso == curso.NmCurso);
+            
+            return validar;
+        }
+        public void Alterar(int id, Models.TbCurso curso)
+        {
+            Models.TbCurso alterar = db.TbCurso.FirstOrDefault(x => x.IdCurso == id);
+            alterar.IdFuncionarioAlteracao = curso.IdFuncionarioAlteracao;
+            alterar.NmCurso = curso.NmCurso;
+            alterar.NrCapacidadeMaxima = curso.NrCapacidadeMaxima;
+            
+            db.SaveChanges();
+        }
         public void Remover(int id)
         {
             Models.TbCurso remover = db.TbCurso.FirstOrDefault(x => x.IdCurso == id);

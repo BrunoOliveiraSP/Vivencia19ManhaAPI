@@ -50,6 +50,14 @@ namespace Vivencia19ManhaAPI.Controllers
          return list;
 
         }
+      [HttpGet("Sigla/{sigla}")]
+        public List<Models.TbDisciplina> Listarporsigla(string sigla)
+        {
+                List<Models.TbDisciplina> Listarporsigla=busi.LIstarporsigla(sigla);
+
+                return Listarporsigla;
+
+        }
 
 
  

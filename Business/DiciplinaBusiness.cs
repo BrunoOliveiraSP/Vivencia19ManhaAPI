@@ -15,7 +15,7 @@ namespace Vivencia19ManhaAPI.Business
         Database.diciplinaDatabase db = new Database.diciplinaDatabase();
         internal void Inserir(Models.TbDisciplina disciplina)
         {
-            if(Verificar(disciplina))
+            if(Verificar(disciplina))//cristian os dados a seren inserido nao tao  entrando no database  tao parando na busines 
                 db.InserirDisciplina(disciplina);
         }
 
@@ -61,9 +61,15 @@ namespace Vivencia19ManhaAPI.Business
             
              List<Models.TbDisciplina> lista = db.listar();
              return lista;
-            
 
          }  
+          
+          public List<Models.TbDisciplina> LIstarporsigla (string sigla)
+          {
+              List<Models.TbDisciplina>LIstarporsigla=db.listarporsigla(sigla);
+
+              return LIstarporsigla;
+          }
 
     }
 }

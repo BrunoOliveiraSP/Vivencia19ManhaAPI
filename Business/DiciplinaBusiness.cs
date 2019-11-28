@@ -15,8 +15,18 @@ namespace Vivencia19ManhaAPI.Business
         Database.diciplinaDatabase db = new Database.diciplinaDatabase();
         internal void Inserir(Models.TbDisciplina disciplina)
         {
-            if(Verificar(disciplina))//cristian os dados a seren inserido nao tao  entrando no database  tao parando na busines 
-                db.InserirDisciplina(disciplina);
+            
+                
+            if(string.IsNullOrEmpty(disciplina.DsSigla))
+              throw new ArgumentException("Sigla invalida");
+                           
+            if(string.IsNullOrEmpty(disciplina.NmDisciplina))
+              throw new ArgumentException("Informe o nome da disciplina");
+
+            if(disciplina.IdFuncionarioAlteracao == 0)
+              throw new ArgumentException("informe o id");
+            
+            db.InserirDisciplina(disciplina);
         }
 
         internal void Alterar(Models.TbDisciplina disciplina)

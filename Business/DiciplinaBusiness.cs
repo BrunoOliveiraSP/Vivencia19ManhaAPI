@@ -23,13 +23,12 @@ namespace Vivencia19ManhaAPI.Business
         {
             if(Verificar(disciplina))
                 db.Alterar(disciplina);
-                //
         }
 
         public bool Verificar(Models.TbDisciplina disciplina)
         {
-            //if(disciplina.BtAtivo == 0)
-            //    return false;
+            if(disciplina.BtAtivo <= 0)
+                return false;
             if(string.IsNullOrEmpty(disciplina.DsSigla))
                 return false;
             if(string.IsNullOrEmpty(disciplina.DtInclusao.ToString()))
@@ -46,8 +45,6 @@ namespace Vivencia19ManhaAPI.Business
           if(id == 0)
           throw new ArgumentException("id invalido");
            db.Deletar(id);
-
-                       
         }
 
         public List<Models.TbDisciplina> listarPorNome (string nome)
@@ -56,7 +53,7 @@ namespace Vivencia19ManhaAPI.Business
 
            return list;
         }
-         public List< Models.TbDisciplina> listar()
+         public List<Models.TbDisciplina> listar()
         {
             
              List<Models.TbDisciplina> lista = db.listar();

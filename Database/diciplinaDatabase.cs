@@ -31,25 +31,23 @@ namespace Vivencia19ManhaAPI.Database
         }
         public void Deletar(int id)
         {
-            Models.TbDisciplina tb = db.TbDisciplina.First(x => x.IdDisciplina == id); 
+            Models.TbDisciplina tb = db.TbDisciplina.FirstOrDefault(x => x.IdDisciplina == id); 
 
             db.TbDisciplina.Remove(tb);
+            db.SaveChanges();
         }
 
         public List<Models.TbDisciplina> listar ()
         {
-            
             List<Models.TbDisciplina> listatudo = db.TbDisciplina.ToList(); 
              
             return listatudo;
-
         }
         public List<Models.TbDisciplina> listaPorNome(string nome)
         {
-            
              List<Models.TbDisciplina> lista = db.TbDisciplina.Where(x => x.NmDisciplina.Contains(nome)).ToList();
+             
              return lista;
-         
         }
         public List <Models.TbDisciplina> listarporsigla(string sigla)
         {

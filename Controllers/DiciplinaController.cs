@@ -14,7 +14,7 @@ namespace Vivencia19ManhaAPI.Controllers
     {
         Business.DiciplinaBusiness busi = new Business.DiciplinaBusiness();
 
-        [HttpPut("Alterar")]//daORA
+        [HttpPut("Alterar")]//daORA /
         public void Alterar(TbDisciplina disciplina)
         {
             busi.Alterar(disciplina);
@@ -39,7 +39,7 @@ namespace Vivencia19ManhaAPI.Controllers
          return list;
         }
 
-        [HttpGet("ConsultarTudo")]//Not daORA T-T
+        [HttpGet("ConsultarTudo")]//daORA :)
         public List<Models.TbDisciplina> listar()
         {
           List<Models.TbDisciplina> list = busi.listar();

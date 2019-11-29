@@ -9,43 +9,86 @@ namespace Vivencia19ManhaAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class SalaVestibularController
+    public class SalaVestibularController : ControllerBase
     {
          Business.SalaVestibularBusiness business = new Business.SalaVestibularBusiness();
 
-
          [HttpPost]
-         public void Inserir(Models.TbSalaVestibular modelo)
-         {
-            business.Inserir(modelo);
+         public ActionResult Inserir(Models.TbSalaVestibular modelo)
+         {            
+            try
+            {
+               business.Inserir(modelo);
+               return Ok();
+            }
+            catch(System.ArgumentException ex)
+            {
+               Models.ErrorModel erro = new Models.ErrorModel(500,ex.Message);
+               return StatusCode(500,erro);
+            }
          }
 
 
          [HttpGet]
-         public List<Models.TbSalaVestibular> Consultar()
+         public ActionResult<List<Models.TbSalaVestibular>> Consultar()
          {         
-            return business.Consultar();
+            
+             try
+            {
+               return business.Consultar();
+            }
+            catch(System.ArgumentException ex)
+            {
+               Models.ErrorModel erro = new Models.ErrorModel(500,ex.Message);
+               return StatusCode(500,erro);
+            }
          }
 
 
           [HttpGet("{id}")]
-         public Models.TbSalaVestibular BuscarPorID(int id)
-         {
-            return business.BuscarPorID(id);
+         public ActionResult<Models.TbSalaVestibular> BuscarPorID(int id)
+         {    
+             try
+            {
+               return business.BuscarPorID(id);
+            }
+            catch(System.ArgumentException ex)
+            {
+               Models.ErrorModel erro = new Models.ErrorModel(500,ex.Message);
+               return StatusCode(500,erro);
+            }
          }
 
 
          [HttpDelete("{id}")]
-         public void Remover(int id)
-         {
-            business.Deletar(id);
+         public ActionResult Remover(int id)
+         {     
+             try
+            {
+               business.Deletar(id);
+               return Ok();
+            }
+            catch(System.ArgumentException ex)
+            {
+               Models.ErrorModel erro = new Models.ErrorModel(500,ex.Message);
+               return StatusCode(500,erro);
+            }
          }
 
 
          [HttpPut]
-         public void Alterar(Models.TbSalaVestibular modelo)
-         {
-            business.Alterar(modelo);
+         public ActionResult Alterar(Models.TbSalaVestibular modelo)
+         {           
+              try
+            {
+               business.Alterar(modelo);
+               return Ok();
+            }
+            catch(System.ArgumentException ex)
+            {
+               Models.ErrorModel erro = new Models.ErrorModel(500,ex.Message);
+               return StatusCode(500,erro);
+            }
          }
     }
 }

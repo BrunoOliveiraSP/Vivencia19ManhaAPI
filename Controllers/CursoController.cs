@@ -36,10 +36,10 @@ namespace Vivencia19ManhaAPI.Controller
             return consulta;
         }
         
-        [HttpGet("{id}")]
-        public List<Models.TbCurso> ConsultarPorId(int id)
+        [HttpGet("{nome}")]
+        public List<Models.TbCurso> ConsultarPorId(string nome)
         {
-            List<Models.TbCurso> consulta = business.ConsultarPorID(id);
+            List<Models.TbCurso> consulta = business.ConsultarPorID(nome);
 
             return consulta;
         }

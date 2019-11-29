@@ -65,9 +65,9 @@ namespace Vivencia19ManhaAPI.Business
         {
             return db.Consultar();
         }
-        public List<Models.TbCurso> ConsultarPorID (int id)
+        public List<Models.TbCurso> ConsultarPorID(string nome)
         {
-            return db.ConsultarPorID(id);
+            return db.ConsultarPorID(nome);
         }
         
     }

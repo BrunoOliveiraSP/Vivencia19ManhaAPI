@@ -43,5 +43,13 @@ namespace Vivencia19ManhaAPI.Controller
 
             return consulta;
         }
+
+        [HttpGet("{sigla}")]
+        public List<Models.TbCurso> ConsultarPorSigla(string sigla)
+        {
+            List<Models.TbCurso> consulta = business.ConsultarPorSigla(sigla);
+
+            return consulta;
+        }
     }
 }

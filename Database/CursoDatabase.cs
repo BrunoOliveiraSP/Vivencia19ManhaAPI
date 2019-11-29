@@ -48,5 +48,10 @@ namespace Vivencia19ManhaAPI.Database
             List<Models.TbCurso> Consultar = db.TbCurso.Where(x => x.NmCurso == nome).ToList();
             return Consultar;
         }
+        public List<Models.TbCurso> ConsultarPorSigla (string sigla)
+        {
+            List<Models.TbCurso> Consultar = db.TbCurso.Where(x => x.DsSigla == sigla).ToList();
+            return Consultar;
+        }
     }
 }

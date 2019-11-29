@@ -73,6 +73,13 @@ namespace Vivencia19ManhaAPI.Controllers
                 return StatusCode(500, erro);
             }
         }
+        [HttpGet("{Id}")]
+
+         public Models.TbProfessor ConsultarPotId(int Id)
+        {
+            return bussines.ConsultarPotId(Id);
+        }
+
 
         [HttpGet("nome/{nome}")]
 	    public ActionResult<List<Models.TbProfessor>> ConsultarPorNome(string nome)

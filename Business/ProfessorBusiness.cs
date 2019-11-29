@@ -167,7 +167,12 @@ namespace Vivencia19ManhaAPI.Business
             List<Models.TbProfessor> lista = db.ListarTodos();
             return lista;
         }
-        
+         public Models.TbProfessor ConsultarPotId(int Id)
+        {
+           return db.ConsultarPotId(Id);
+            
+        }
+
 	    public List<Models.TbProfessor> ConsultarPorNome(string nome)
 	    {
 		    List<Models.TbProfessor> list = db.ConsultarPorNome(nome);

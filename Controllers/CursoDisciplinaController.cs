@@ -7,11 +7,14 @@ using Microsoft.Extensions.Logging;
 
 namespace Vivencia19ManhaAPI.Controller
 {
-    public class CursoDisciplinaController
+    
+    [ApiController]
+    [Route("[controller]")]
+    public class CursoDisciplinaController : ControllerBase
     {
         Business.CursoDisciplinaBusiness business = new Business.CursoDisciplinaBusiness();
 
-        [HttpPost]
+          [HttpPost]
         public void Inserir(Models.TbCursoDisciplina cursoDisciplina)
         {
             business.Inserir(cursoDisciplina);

@@ -71,6 +71,10 @@ namespace Vivencia19ManhaAPI.Business
           TbSala sala = db.BuscarPorID(id);
           return sala;
        }
+         public List<TbSala> ConsultarPorInstituicao(string nome)
+       {
+           return db.ConsultarPorInstituicao(nome);
+       }
 
     }
 }

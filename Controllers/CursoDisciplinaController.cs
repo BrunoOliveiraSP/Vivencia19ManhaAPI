@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Vivencia19ManhaAPI.Controller
 {
-    
+    /aaa
     [ApiController]
     [Route("[controller]")]
     public class CursoDisciplinaController : ControllerBase

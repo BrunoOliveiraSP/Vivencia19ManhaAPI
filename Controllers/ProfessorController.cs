@@ -80,7 +80,8 @@ namespace Vivencia19ManhaAPI.Controllers
             try
             {
                 List<Models.TbProfessor> list = bussines.ConsultarPorNome(nome);
-	    	    return list;
+	    	    return list; 
+                
             }
             catch (System.Exception ex)
             {

@@ -30,7 +30,7 @@ namespace Vivencia19ManhaAPI.Controllers
         {
             business.AlterarTurma(modelo);
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
          public void RemoverTurma(int id)
         {
             business.RemoverTurma(id);

@@ -15,9 +15,6 @@ namespace Vivencia19ManhaAPI.Business
             if(modelo.TpPeriodo == string.Empty)
             throw new ArgumentException("unidade de tempo invalido");
 
-            if(modelo.IdCurso == 0)
-            throw new ArgumentException("Id invalido");
-
             db.InserirTurma(modelo);
         }
 

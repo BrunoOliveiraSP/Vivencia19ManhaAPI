@@ -14,34 +14,57 @@ namespace Vivencia19ManhaAPI.Business
         public void Inserir(Models.TbSalaVestibular modelo)
         {
           if(modelo.IdSala <= 0)
-          throw new ArgumentException("O id da sala nao pode ser igual a zero");
+          throw new ArgumentException("O id da sala não pode ser igual a zero");
 
           else if(modelo.DsPeriodo == string.Empty)
-          throw new ArgumentException("Preencha o periodo corretamente");
+          throw new ArgumentException("Preencha o periodo");
 
           else if(modelo.NrOrdem <= 0)
-          throw new ArgumentException("A capacidade maxima nao pode ser igual a zero");
+          throw new ArgumentException("o numero da ordem não pode ser igual a zero");
 
           else if(modelo.QtInscritos <= 0)
-          throw new ArgumentException("A quatidade de inscritos nao pode ser igual a zero");
+          throw new ArgumentException("A quantidade de inscritos não pode ser igual a zero");
 
           db.Inserir(modelo);
         }
 
         public List<TbSalaVestibular> Consultar()
        {
-           return null;
+           List<TbSalaVestibular> salas = db.Consultar();
+           return salas;
        }
        public void Deletar(int id)
        {
           if(id == 0)
-          throw new ArgumentException("O id nao pode ser igual a zero");
+          throw new ArgumentException("O id não pode ser igual a zero");
 
            db.Deletar(id);
        }
        public void Alterar(TbSalaVestibular modelo)
        {
+           if(modelo.IdSalaVestibular == 0)
+          throw new ArgumentException("O id da sala do vestibular não pode ser igual a zero");
+
+          else if(modelo.IdSala <= 0)
+            throw new ArgumentException("O id da sala não pode ser igual a zero");
+
+          else if(modelo.DsPeriodo == string.Empty)
+          throw new ArgumentException("Preencha o periodo");
+
+          else if(modelo.NrOrdem <= 0)
+          throw new ArgumentException("o numero da ordem não pode ser igual a zero");
+
+          else if(modelo.QtInscritos <= 0)
+          throw new ArgumentException("A quantidade de inscritos não pode ser igual a zero");
            db.Alterar(modelo);
+       }
+       public TbSalaVestibular BuscarPorID(int id)
+       {
+           if(id == 0)
+          throw new ArgumentException("O id não pode ser igual a zero");
+
+           TbSalaVestibular sala = db.BuscarPorID(id);
+           return sala;
        }
     }
 }

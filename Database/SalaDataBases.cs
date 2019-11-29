@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Vivencia19ManhaAPI.Models;
@@ -18,7 +19,7 @@ namespace Vivencia19ManhaAPI.Database
        }
         public List<TbSala> Consultar()
        {
-           List<TbSala> salas = db.TbSala.ToList();
+           List<TbSala> salas = db.TbSala.OrderBy(t => t.NmSala).ToList();
            return salas;
        }
        public void Deletar(int id)
@@ -26,6 +27,11 @@ namespace Vivencia19ManhaAPI.Database
              TbSala sala = db.TbSala.First(t => t.IdSala == id);
              db.TbSala.Remove(sala);
              db.SaveChanges();
+       }
+        public TbSala BuscarPorID(int id)
+       {
+             TbSala sala = db.TbSala.First(t => t.IdSala == id);
+             return sala;
        }
        public void Alterar(TbSala modelo)
        {

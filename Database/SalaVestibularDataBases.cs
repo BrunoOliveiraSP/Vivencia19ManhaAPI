@@ -25,22 +25,27 @@ namespace Vivencia19ManhaAPI.Database
 
        public void Deletar(int id)
        {
-           Models.TbSalaVestibular sala = db.TbSalaVestibular.First(t => t.IdSalaVestibular == id);
+           Models.TbSalaVestibular sala = db.TbSalaVestibular.FirstOrDefault(t => t.IdSalaVestibular == id);
            db.TbSalaVestibular.Remove(sala);
            db.SaveChanges();
        }
 
        public void Alterar(Models.TbSalaVestibular modelo)
        {
-         Models.TbSalaVestibular sala = db.TbSalaVestibular.First(t => t.IdSalaVestibular == modelo.IdSalaVestibular);
+         Models.TbSalaVestibular sala = db.TbSalaVestibular.FirstOrDefault(t => t.IdSalaVestibular == modelo.IdSalaVestibular);
 
           sala.IdSala = modelo.IdSala;
           sala.DsPeriodo = modelo.DsPeriodo;
           sala.NrOrdem = modelo.NrOrdem;
           sala.QtInscritos = modelo.QtInscritos;
           
-        
          db.SaveChanges();
+
+       }
+       public Models.TbSalaVestibular BuscarPorID(int id)
+       {
+           Models.TbSalaVestibular sala = db.TbSalaVestibular.FirstOrDefault(t => t.IdSalaVestibular == id);
+           return sala;
 
        }
     }

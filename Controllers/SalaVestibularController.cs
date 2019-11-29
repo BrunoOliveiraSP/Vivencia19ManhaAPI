@@ -5,35 +5,31 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-
 namespace Vivencia19ManhaAPI.Controllers
 {
-    
     [ApiController]
     [Route("[controller]")]
-
-    
-    public class SalaController : ControllerBase
+    public class SalaVestibularController
     {
-      Business.SalaBusiness business = new Business.SalaBusiness();
+         Business.SalaVestibularBusiness business = new Business.SalaVestibularBusiness();
 
 
          [HttpPost]
-         public void Inserir(Models.TbSala modelo)
+         public void Inserir(Models.TbSalaVestibular modelo)
          {
             business.Inserir(modelo);
          }
 
 
          [HttpGet]
-         public List<Models.TbSala> Consultar()
+         public List<Models.TbSalaVestibular> Consultar()
          {         
             return business.Consultar();
          }
 
 
           [HttpGet("{id}")]
-         public Models.TbSala BuscarPorID(int id)
+         public Models.TbSalaVestibular BuscarPorID(int id)
          {
             return business.BuscarPorID(id);
          }
@@ -47,7 +43,7 @@ namespace Vivencia19ManhaAPI.Controllers
 
 
          [HttpPut]
-         public void Alterar(Models.TbSala modelo)
+         public void Alterar(Models.TbSalaVestibular modelo)
          {
             business.Alterar(modelo);
          }

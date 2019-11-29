@@ -42,7 +42,6 @@ namespace Vivencia19ManhaAPI.Database
         {
             List<TbAnoLetivo> lista = db.TbAnoLetivo.ToList();
             
-
             return lista;
         }
     }

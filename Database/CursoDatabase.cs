@@ -23,9 +23,9 @@ namespace Vivencia19ManhaAPI.Database
             
             return validar;
         }
-        public void Alterar(int id, Models.TbCurso curso)
+        public void Alterar(Models.TbCurso curso)
         {
-            Models.TbCurso alterar = db.TbCurso.FirstOrDefault(x => x.IdCurso == id);
+            Models.TbCurso alterar = db.TbCurso.FirstOrDefault(x => x.IdCurso == curso.IdCurso);
             alterar.IdFuncionarioAlteracao = curso.IdFuncionarioAlteracao;
             alterar.NmCurso = curso.NmCurso;
             alterar.NrCapacidadeMaxima = curso.NrCapacidadeMaxima;
@@ -35,7 +35,7 @@ namespace Vivencia19ManhaAPI.Database
         public void Remover(int id)
         {
             Models.TbCurso remover = db.TbCurso.FirstOrDefault(x => x.IdCurso == id);
-            db.TbCurso.Remove(remover);
+            db.Remove(remover);
             db.SaveChanges();
         }
         public List<Models.TbCurso> Consultar()
@@ -43,9 +43,14 @@ namespace Vivencia19ManhaAPI.Database
             List<Models.TbCurso> Listar = db.TbCurso.ToList();
             return Listar;
         }
-        public List<Models.TbCurso> ConsultarPorID (int id)
+        public List<Models.TbCurso> ConsultarPorID (string nome)
         {
-            List<Models.TbCurso> Consultar = db.TbCurso.Where(x => x.IdCurso == id).ToList();
+            List<Models.TbCurso> Consultar = db.TbCurso.Where(x => x.NmCurso == nome).ToList();
+            return Consultar;
+        }
+        public List<Models.TbCurso> ConsultarPorSigla (string sigla)
+        {
+            List<Models.TbCurso> Consultar = db.TbCurso.Where(x => x.DsSigla == sigla).ToList();
             return Consultar;
         }
     }

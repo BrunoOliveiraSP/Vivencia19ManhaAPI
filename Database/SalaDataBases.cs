@@ -22,6 +22,11 @@ namespace Vivencia19ManhaAPI.Database
            List<TbSala> salas = db.TbSala.OrderBy(t => t.NmSala).ToList();
            return salas;
        }
+       public List<TbSala> ConsultarPorInstituicao(string nome)
+       {
+           List<TbSala> salas = db.TbSala.Where(t => t.NmLocal.Contains(nome)).OrderBy(t => t.NmSala).ToList();
+           return salas;
+       }
        public void Deletar(int id)
        {
              TbSala sala = db.TbSala.First(t => t.IdSala == id);

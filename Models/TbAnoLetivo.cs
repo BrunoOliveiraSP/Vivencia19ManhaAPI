@@ -19,18 +19,30 @@ namespace Vivencia19ManhaAPI.Models
         [Key]
         [Column("id_ano_letivo", TypeName = "int(11)")]
         public int IdAnoLetivo { get; set; }
+
+
         [Column("nr_ano", TypeName = "int(11)")]
         public int NrAno { get; set; }
+        
+        
         [Column("dt_inicio", TypeName = "date")]
         public DateTime DtInicio { get; set; }
+        
+        
         [Column("dt_fim", TypeName = "date")]
         public DateTime DtFim { get; set; }
+        
+        
         [Column("bt_ativo", TypeName = "bit(1)")]
         public bool BtAtivo { get; set; }
+        
+        
         [Required]
         [Column("tp_status", TypeName = "varchar(50)")]
         public string TpStatus { get; set; }
 
+        
+        
         [InverseProperty("IdAnoLetivoNavigation")]
         public virtual ICollection<TbAlunoMensalidade> TbAlunoMensalidade { get; set; }
         [InverseProperty("IdAnoLetivoNavigation")]

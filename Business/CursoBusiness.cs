@@ -36,7 +36,7 @@ namespace Vivencia19ManhaAPI.Business
             db.InserirCurso(curso);
         }
 
-        public void Alterar(int id , Models.TbCurso curso)
+        public void Alterar(Models.TbCurso curso)
         {
             if (curso.IdFuncionarioAlteracao <= 0)
             {
@@ -51,13 +51,13 @@ namespace Vivencia19ManhaAPI.Business
                 throw new Exception("Insira um valor váildo para o limite maximo");
             }
 
-            db.Alterar(id, curso);
+            db.Alterar(curso);
 
         }
         public void Remover(int id)
         {
             if(id == 0) { 
-                throw new ArgumentException("ID Invalído");
+                throw new Exception("ID Invalido");
             }
             db.Remover(id);
         }
@@ -65,10 +65,14 @@ namespace Vivencia19ManhaAPI.Business
         {
             return db.Consultar();
         }
-        public List<Models.TbCurso> ConsultarPorID (int id)
+        public List<Models.TbCurso> ConsultarPorID(string nome)
         {
-            return db.ConsultarPorID(id);
+            return db.ConsultarPorID(nome);
         }
         
+        public List<Models.TbCurso> ConsultarPorSigla(string sigla)
+        {
+            return db.ConsultarPorSigla(sigla);
+        }
     }
 }

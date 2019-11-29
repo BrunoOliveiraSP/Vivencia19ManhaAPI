@@ -14,25 +14,7 @@ namespace Vivencia19ManhaAPI.Business
 
         public void Inserir(Models.TbCursoDisciplina cursoDisciplina)
         {
-            if(cursoDisciplina.IdCurso <= 0)
-            {
-                throw new Exception("ID do cursoDisciplina invalido");
-            }
-            if(cursoDisciplina.IdDisciplina <= 0 )
-            {
-                throw new Exception("ID  da disciplina invalido");
-            }
-            bool validarCurso = db.ValidarIdCurso(cursoDisciplina);
-
-            if(validarCurso == true)
-            {
-                throw new Exception("ID do curso já validado no sistema");
-            }
-            bool validarDisciplina = db.ValidarIdDisciplina(cursoDisciplina);
-            if(validarDisciplina == true)
-            {
-                throw new Exception("Disciplina já registrada no sistema");
-            }
+           
             db.Inserir(cursoDisciplina);
         }        
         public void Deletar(int id)
@@ -44,22 +26,9 @@ namespace Vivencia19ManhaAPI.Business
             db.Deletar(id);
         }   
         
-        public void Alterar(int id, Models.TbCursoDisciplina cursoDisciplina)
-        {
-            if(id <= 0)
-            {
-                throw new Exception("ID inválido");
-            }
-            if(cursoDisciplina.IdCurso <= 0)
-            {
-                throw new Exception("ID do cursoDisciplina invalido");
-            }
-            if(cursoDisciplina.IdDisciplina <= 0 )
-            {
-                throw new Exception("ID  da disciplina invalido");
-            }
-
-            db.Alterar(id, cursoDisciplina);           
+        public void Alterar(Models.TbCursoDisciplina cursoDisciplina)
+        { 
+                   db.Alterar(cursoDisciplina);           
         }   
         
         public List<Models.TbCursoDisciplina> Consultar()
@@ -76,11 +45,6 @@ namespace Vivencia19ManhaAPI.Business
         
         public List<Models.TbCursoDisciplina>  ConsultarPorId(int id)
         {
-            if(id <= 0)
-            {
-                throw new Exception("Id inválido para consulta");
-            }    
-
             List<Models.TbCursoDisciplina> consulta = db.ConsultarPorId(id);
             if (consulta == null)
             {

@@ -25,7 +25,7 @@ namespace Vivencia19ManhaAPI.Database
         }
         public void Alterar(Models.TbCurso curso)
         {
-            Models.TbCurso alterar = db.TbCurso.FirstOrDefault(x => x.IdCurso == id);
+            Models.TbCurso alterar = db.TbCurso.FirstOrDefault(x => x.IdCurso == curso.IdCurso);
             alterar.IdFuncionarioAlteracao = curso.IdFuncionarioAlteracao;
             alterar.NmCurso = curso.NmCurso;
             alterar.NrCapacidadeMaxima = curso.NrCapacidadeMaxima;
@@ -35,7 +35,7 @@ namespace Vivencia19ManhaAPI.Database
         public void Remover(int id)
         {
             Models.TbCurso remover = db.TbCurso.FirstOrDefault(x => x.IdCurso == id);
-            db.TbCurso.Remove(remover);
+            db.Remove(remover);
             db.SaveChanges();
         }
         public List<Models.TbCurso> Consultar()

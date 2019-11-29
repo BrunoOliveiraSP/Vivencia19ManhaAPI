@@ -57,7 +57,7 @@ namespace Vivencia19ManhaAPI.Business
         public void Remover(int id)
         {
             if(id == 0) { 
-                throw new ArgumentException("ID Invalído");
+                throw new Exception("ID Invalido");
             }
             db.Remover(id);
         }

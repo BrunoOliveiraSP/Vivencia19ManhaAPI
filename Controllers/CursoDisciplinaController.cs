@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Vivencia19ManhaAPI.Controllers
+namespace Vivencia19ManhaAPI.Controller
 {
     public class CursoDisciplinaController
     {
@@ -18,11 +18,11 @@ namespace Vivencia19ManhaAPI.Controllers
         }
         
         [HttpPut]
-        public void AlterarCurso(int id, Models.TbCursoDisciplina cursoDisciplina)
+        public void AlterarCurso(Models.TbCursoDisciplina cursoDisciplina)
         {
-            business.Alterar(id, cursoDisciplina);
+            business.Alterar(cursoDisciplina);
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public void RemoverCurso(int id)
         {
             business.Deletar(id);
@@ -35,7 +35,7 @@ namespace Vivencia19ManhaAPI.Controllers
             return consulta;
         }
         
-        [HttpGet]
+        [HttpGet("{id}")]
         public List<Models.TbCursoDisciplina> ConsultarPorId(int id)
         {
             List<Models.TbCursoDisciplina> consulta = business.ConsultarPorId(id);

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Vivencia19ManhaAPI.Controllers
+namespace Vivencia19ManhaAPI.Controller
 {
     [ApiController]
     [Route("[controller]")]
@@ -23,7 +23,7 @@ namespace Vivencia19ManhaAPI.Controllers
         {
             business.Alterar(curso);
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public void RemoverCurso(int id)
         {
             business.Remover(id);

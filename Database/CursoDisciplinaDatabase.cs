@@ -37,9 +37,9 @@ namespace Vivencia19ManhaAPI.Database
 
         db.SaveChanges();
     }
-    public void Alterar(int id, Models.TbCursoDisciplina cursoDisciplina)
+    public void Alterar(Models.TbCursoDisciplina cursoDisciplina)
     {
-        Models.TbCursoDisciplina alterar = db.TbCursoDisciplina.FirstOrDefault(x => x.IdCursoDisciplina == id);
+        Models.TbCursoDisciplina alterar = db.TbCursoDisciplina.FirstOrDefault(x => x.IdCursoDisciplina == cursoDisciplina.IdCursoDisciplina);
         alterar.IdCurso = cursoDisciplina.IdCurso;
         alterar.IdDisciplina = cursoDisciplina.IdDisciplina;        
         alterar.NrCargaHoraria = cursoDisciplina.NrCargaHoraria;

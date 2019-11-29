@@ -17,30 +17,63 @@ namespace Vivencia19ManhaAPI.Controllers
         Business.ProfessorDisciplinaBusiness business = new Business.ProfessorDisciplinaBusiness();
 
         [HttpPost]
-
-        public void Inserir(Models.TbProfessorDisciplina profdisc)
+        public ActionResult Inserir(Models.TbProfessorDisciplina profdisc)
         {
-            business.Inserir(profdisc);
+            try
+            {
+                business.Inserir(profdisc);
+                return Ok();
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
 
         [HttpDelete("{Id}")]
-        public void Remover(int Id)
+        public ActionResult Remover(int Id)
         {
-            business.Remover(Id);
+            try
+            {
+                business.Remover(Id);
+                return Ok();
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
 
         [HttpGet]
-
-        public List<Models.TbProfessorDisciplina> ListarTodos()
+        public ActionResult<List<Models.TbProfessorDisciplina>> ListarTodos()
         {
-            return business.ListarTodos();
+            try
+            {
+                List<Models.TbProfessorDisciplina> list = business.ListarTodos(); 
+                return list;
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
 
         [HttpPut]
-        public void Alterar(Models.TbProfessorDisciplina profdisc)
+        public ActionResult Alterar(Models.TbProfessorDisciplina profdisc)
         {
-            business.Alterar(profdisc);
+            try
+            {
+                business.Alterar(profdisc);
+                return Ok();
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
-
     }
 }

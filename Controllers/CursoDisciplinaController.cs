@@ -14,7 +14,7 @@ namespace Vivencia19ManhaAPI.Controller
     {
         Business.CursoDisciplinaBusiness business = new Business.CursoDisciplinaBusiness();
 
-          [HttpPost]
+        [HttpPost]
         public void Inserir(Models.TbCursoDisciplina cursoDisciplina)
         {
             business.Inserir(cursoDisciplina);

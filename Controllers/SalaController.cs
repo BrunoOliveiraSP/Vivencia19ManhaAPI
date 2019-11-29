@@ -62,8 +62,21 @@ namespace Vivencia19ManhaAPI.Controllers
                Models.ErrorModel erro = new Models.ErrorModel(500,ex.Message);
                return StatusCode(500,erro);
             }
+             
          }
-
+          [HttpGet("Buscar/{nome}")]
+         public ActionResult<List<Models.TbSala>> BuscarPorInstituicao(string nome)
+         {     
+             try
+            {
+               return business.ConsultarPorInstituicao(nome);
+            }
+            catch(System.ArgumentException ex)
+            {
+               Models.ErrorModel erro = new Models.ErrorModel(500,ex.Message);
+               return StatusCode(500,erro);
+            }
+         }
 
          [HttpDelete("{id}")]
          public ActionResult Remover(int id)

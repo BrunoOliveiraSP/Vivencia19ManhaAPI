@@ -19,9 +19,9 @@ namespace Vivencia19ManhaAPI.Controllers
         }
         
         [HttpPut]
-        public void AlterarCurso(int id, Models.TbCurso curso)
+        public void AlterarCurso(Models.TbCurso curso)
         {
-            business.Alterar(id, curso);
+            business.Alterar(curso);
         }
         [HttpDelete]
         public void RemoverCurso(int id)
@@ -36,7 +36,7 @@ namespace Vivencia19ManhaAPI.Controllers
             return consulta;
         }
         
-        [HttpGet]
+        [HttpGet("{id}")]
         public List<Models.TbCurso> ConsultarPorId(int id)
         {
             List<Models.TbCurso> consulta = business.ConsultarPorID(id);

@@ -23,7 +23,7 @@ namespace Vivencia19ManhaAPI.Database
             
             return validar;
         }
-        public void Alterar(int id, Models.TbCurso curso)
+        public void Alterar(Models.TbCurso curso)
         {
             Models.TbCurso alterar = db.TbCurso.FirstOrDefault(x => x.IdCurso == id);
             alterar.IdFuncionarioAlteracao = curso.IdFuncionarioAlteracao;

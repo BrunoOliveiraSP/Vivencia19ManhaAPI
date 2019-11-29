@@ -36,7 +36,7 @@ namespace Vivencia19ManhaAPI.Business
             db.InserirCurso(curso);
         }
 
-        public void Alterar(int id , Models.TbCurso curso)
+        public void Alterar(Models.TbCurso curso)
         {
             if (curso.IdFuncionarioAlteracao <= 0)
             {
@@ -51,7 +51,7 @@ namespace Vivencia19ManhaAPI.Business
                 throw new Exception("Insira um valor váildo para o limite maximo");
             }
 
-            db.Alterar(id, curso);
+            db.Alterar(curso);
 
         }
         public void Remover(int id)

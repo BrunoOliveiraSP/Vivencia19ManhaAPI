@@ -57,6 +57,12 @@ namespace Vivencia19ManhaAPI.Database
 		return list;
 	    }
 
+        public Models.TbProfessor ConsultarPotId(int Id)
+        {
+            Models.TbProfessor l = db.TbProfessor.FirstOrDefault(x => x.IdProfessor == Id);
+            return l;
+        }
+
         public void Deletar(int id)
          {
              Models.TbProfessor r = db.TbProfessor.FirstOrDefault(x =>x.IdProfessor == id);

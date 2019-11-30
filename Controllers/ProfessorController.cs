@@ -15,37 +15,86 @@ namespace Vivencia19ManhaAPI.Controllers
        Business.ProfessorBusiness bussines = new Business.ProfessorBusiness();
 
         [HttpPost]
-        public void Inserir(Models.TbProfessor professor)
+        public ActionResult Inserir(Models.TbProfessor professor)
         {
-            bussines.Inserir(professor);
+            try
+            {
+                bussines.Inserir(professor);
+                return Ok();    
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
 
         [HttpPut]
-        public void Alterar(Models.TbProfessor professor)
+        public ActionResult Alterar(Models.TbProfessor professor)
         {
-            bussines.Alterar(professor);
+            try
+            {
+                bussines.Alterar(professor);
+                return Ok();    
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
 
         [HttpDelete("{id}")]
-        public void Remover(int id)
+        public ActionResult Remover(int id)
         {
-            bussines.Deletar(id);
+            try
+            {
+                bussines.Deletar(id);
+                return Ok();    
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
 
         [HttpGet]
-        public List<Models.TbProfessor> ListarTodos()
+        public ActionResult<List<Models.TbProfessor>> ListarTodos()
         {
-             List<Models.TbProfessor> lista = bussines.ListarTodos();
-            return lista;
+            try
+            {
+                List<Models.TbProfessor> lista = bussines.ListarTodos();
+                return lista;
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
+        }
+        [HttpGet("id/{Id}")]
 
+         public Models.TbProfessor ConsultarPotId(int Id)
+        {
+            return bussines.ConsultarPotId(Id);
         }
 
-        [HttpGet("nome/{nome}")]
-	    public List<Models.TbProfessor> ConsultarPorNome(string nome)
-	    {
-	    	List<Models.TbProfessor> list = bussines.ConsultarPorNome(nome);
 
-	    	return list;
+        [HttpGet("nome/{nome}")]
+	    public ActionResult<List<Models.TbProfessor>> ConsultarPorNome(string nome)
+	    {
+            try
+            {
+                List<Models.TbProfessor> list = bussines.ConsultarPorNome(nome);
+	    	    return list; 
+                
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
 	    }
     }
 }

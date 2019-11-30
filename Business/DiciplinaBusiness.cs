@@ -23,8 +23,8 @@ namespace Vivencia19ManhaAPI.Business
             if(string.IsNullOrEmpty(disciplina.NmDisciplina))
               throw new ArgumentException("Informe o nome da disciplina");
 
-            if(disciplina.IdFuncionarioAlteracao == 0)
-              throw new ArgumentException("informe o id");
+           // if(disciplina.IdFuncionarioAlteracao == 0)
+            //  throw new ArgumentException("informe o id");
             
             db.InserirDisciplina(disciplina);
         }
@@ -45,8 +45,8 @@ namespace Vivencia19ManhaAPI.Business
                 return false;
             if(string.IsNullOrEmpty(disciplina.NmDisciplina))
                 return false;
-            if(disciplina.IdFuncionarioAlteracao == 0)
-                return false;
+          //  if(disciplina.IdFuncionarioAlteracao == 0)
+           //     return false;
             return true;
         }
 

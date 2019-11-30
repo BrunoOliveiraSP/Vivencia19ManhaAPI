@@ -14,10 +14,6 @@ namespace Vivencia19ManhaAPI.Business
 
         public void InserirCurso(Models.TbCurso curso)
         {
-            if (curso.IdFuncionarioAlteracao <= 0)
-            {
-                throw new Exception("Valor inválido para o ID do funcionario");
-            }
             if(curso.NmCurso == string.Empty)
             {
                 throw new Exception("Insira o nome de um curso");
@@ -65,14 +61,16 @@ namespace Vivencia19ManhaAPI.Business
         {
             return db.Consultar();
         }
-        public List<Models.TbCurso> ConsultarPorID(string nome)
+        public List<Models.TbCurso> ConsultarPorNome(string nome)
         {
-            return db.ConsultarPorID(nome);
+            List<Models.TbCurso> consulta = db.ConsultarPorNome(nome);
+            return consulta;
         }
-        
+
         public List<Models.TbCurso> ConsultarPorSigla(string sigla)
         {
-            return db.ConsultarPorSigla(sigla);
+            List<Models.TbCurso> consulta = db.ConsultarPorSigla(sigla);
+            return consulta;
         }
     }
 }

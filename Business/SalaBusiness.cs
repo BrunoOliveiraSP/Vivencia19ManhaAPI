@@ -73,7 +73,16 @@ namespace Vivencia19ManhaAPI.Business
        }
          public List<TbSala> ConsultarPorInstituicao(string nome)
        {
-           return db.ConsultarPorInstituicao(nome);
+         if(!string.IsNullOrEmpty(nome))
+         {
+            return db.ConsultarPorInstituicao(nome);
+         }
+         else
+         {
+            return db.Consultar();
+         }
+           
+          
        }
 
     }

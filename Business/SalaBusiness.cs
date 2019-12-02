@@ -47,12 +47,12 @@ namespace Vivencia19ManhaAPI.Business
        public void Alterar(TbSala modelo)
        {
            if(modelo.IdSala == 0)
-          throw new ArgumentException("O id nao pode ser igual a zero");
-
-          else if(modelo.NmLocal == string.Empty)
+            throw new ArgumentException("O id nao pode ser igual a zero");
+            
+          else if(string.IsNullOrEmpty(modelo.NmLocal) == true)
             throw new ArgumentException("Coloque o nome do local");
 
-          else if(modelo.NmSala == string.Empty)
+          else if(string.IsNullOrEmpty(modelo.NmSala) == true)
             throw new ArgumentException("Coloque o nome da sala");
 
          else if(modelo.NrCapacidadeMaxima <= 0)

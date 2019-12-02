@@ -15,17 +15,13 @@ namespace Vivencia19ManhaAPI.Business
         Database.diciplinaDatabase db = new Database.diciplinaDatabase();
         internal void Inserir(Models.TbDisciplina disciplina)
         {
-            
-                
+                           
             if(string.IsNullOrEmpty(disciplina.DsSigla))
               throw new ArgumentException("Sigla invalida");
                            
             if(string.IsNullOrEmpty(disciplina.NmDisciplina))
               throw new ArgumentException("Informe o nome da disciplina");
-
-           // if(disciplina.IdFuncionarioAlteracao == 0)
-            //  throw new ArgumentException("informe o id");
-            
+                       
             db.InserirDisciplina(disciplina);
         }
 
@@ -45,33 +41,31 @@ namespace Vivencia19ManhaAPI.Business
                 return false;
             if(string.IsNullOrEmpty(disciplina.NmDisciplina))
                 return false;
-          //  if(disciplina.IdFuncionarioAlteracao == 0)
-           //     return false;
+          
             return true;
         }
 
-        public void remover (int id)
+        public void Remover (int id)
         {
           if(id == 0)
           throw new ArgumentException("id invalido");
            db.Deletar(id);
         }
 
-        public List<Models.TbDisciplina> listarPorNome (string nome)
+        public List<Models.TbDisciplina> ListarPorNome (string nome)
         {
            List<Models.TbDisciplina> list = db.listaPorNome(nome);
 
            return list;
         }
-         public List<Models.TbDisciplina> listar()
+         public List<Models.TbDisciplina> Listar()
         {
-            
              List<Models.TbDisciplina> lista = db.listar();
              return lista;
 
          }  
           
-          public List<Models.TbDisciplina> LIstarporsigla (string sigla)
+          public List<Models.TbDisciplina> Listarporsigla (string sigla)
           {
               List<Models.TbDisciplina>LIstarporsigla=db.listarporsigla(sigla);
 

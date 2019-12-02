@@ -38,7 +38,7 @@ namespace Vivencia19ManhaAPI.Controller
             return consulta;
         }
         
-        [HttpGet("{id}")]
+        [HttpGet("ConsultarPorId/{id}")]
         public List<Models.TbCursoDisciplina> ConsultarPorId(int id)
         {
             List<Models.TbCursoDisciplina> consulta = business.ConsultarPorId(id);

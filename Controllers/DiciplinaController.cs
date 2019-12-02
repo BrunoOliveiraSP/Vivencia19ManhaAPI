@@ -14,42 +14,42 @@ namespace Vivencia19ManhaAPI.Controllers
     {
         Business.DiciplinaBusiness busi = new Business.DiciplinaBusiness();
 
-        [HttpPut("Alterar")]//daORA /
+        [HttpPut("Alterar")]
         public void Alterar(TbDisciplina disciplina)
         {
             busi.Alterar(disciplina);
         }
 
-        [HttpPost("Inserir")]//daORA
-         public void insert (Models.TbDisciplina livro)
+        [HttpPost("Inserir")]
+         public void Insert (Models.TbDisciplina livro)
         {
           busi.Inserir(livro);
         }
 
-        [HttpDelete("Remover/{id}")]//daORA
-        public void remover (int id)
+        [HttpDelete("Remover/{id}")]
+        public void Remover (int id)
         {
-          busi.remover(id);
+          busi.Remover(id);
         }
 
-        [HttpGet("ConsultarPorDisciplina/{nome}")]//daORA
+        [HttpGet("ConsultarPorDisciplina/{nome}")]
         public List<Models.TbDisciplina> listarPorNome (string nome)
         {
-         List<Models.TbDisciplina> list = busi.listarPorNome(nome);
+         List<Models.TbDisciplina> list = busi.ListarPorNome(nome);
          return list;
         }
 
-        [HttpGet("ConsultarTudo")]//daORA :)
-        public List<Models.TbDisciplina> listar()
+        [HttpGet("ConsultarTudo")]
+        public List<Models.TbDisciplina> Listar()
         {
-          List<Models.TbDisciplina> list = busi.listar();
+          List<Models.TbDisciplina> list = busi.Listar();
           return list;
         }
 
-        [HttpGet("Sigla/{sigla}")]//daORA
+        [HttpGet("Sigla/{sigla}")]
         public List<Models.TbDisciplina> Listarporsigla(string sigla)
         {
-                List<Models.TbDisciplina> Listarporsigla=busi.LIstarporsigla(sigla);
+                List<Models.TbDisciplina> Listarporsigla=busi.Listarporsigla(sigla);
 
                 return Listarporsigla;
         }

@@ -19,10 +19,12 @@ namespace Vivencia19ManhaAPI.Models
 
         [Key]
         [Column("id_curso", TypeName = "int(11)")]
-        public int IdCurso { get; set; }
+         public int IdCurso { get; set; }
+        
         [Required]
         [Column("nm_curso", TypeName = "varchar(50)")]
         public string NmCurso { get; set; }
+       
         [Required]
         [Column("ds_sigla", TypeName = "varchar(50)")]
         public string DsSigla { get; set; }

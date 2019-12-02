@@ -14,7 +14,6 @@ namespace Vivencia19ManhaAPI.Business
 
         public void Inserir(Models.TbCursoDisciplina cursoDisciplina)
         {
-           
             db.Inserir(cursoDisciplina);
         }        
         public void Deletar(int id)

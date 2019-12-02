@@ -15,10 +15,17 @@ namespace Vivencia19ManhaAPI.Database
             db_a5064d_freiContext db = new db_a5064d_freiContext();
 
 
-            public void Inserir(Models.TbProfessorDisciplina profdisc)
+            public void Inserir(List<Models.ProfessorRequest> request)
             {
-                db.TbProfessorDisciplina.Add(profdisc);
-                db.SaveChanges();
+                foreach(Models.ProfessorRequest item in request)
+                {
+                    TbProfessorDisciplina profdisc = new TbProfessorDisciplina();
+                    profdisc.IdProfessor = item.Professor.IdProfessor;
+                    profdisc.IdDisciplina = item.Disciplina.IdDisciplina;
+
+                    db.TbProfessorDisciplina.Add(profdisc);
+                    db.SaveChanges();
+                }            
             }
 
             public void Remover(int Id)
@@ -43,7 +50,11 @@ namespace Vivencia19ManhaAPI.Database
                 return lista;
             }
 
-
+            public List<Models.TbProfessorDisciplina> ListarPorIdProfessor(int id)
+            {
+                List<Models.TbProfessorDisciplina> lista = db.TbProfessorDisciplina.Where(x => x.IdProfessor == id).ToList();
+                return lista;
+            }
 
     }
 }

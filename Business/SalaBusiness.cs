@@ -15,11 +15,11 @@ namespace Vivencia19ManhaAPI.Business
 
       public void Inserir(TbSala modelo)
       {
-          if(modelo.NmLocal == string.Empty)
+          if(string.IsNullOrEmpty(modelo.NmLocal) == true)
             throw new ArgumentException("Coloque o nome do local");
 
-          else if(modelo.NmSala == string.Empty)
-             throw new ArgumentException("Coloque o nome da sala");
+          else if(string.IsNullOrEmpty(modelo.NmSala) == true)
+            throw new ArgumentException("Coloque o nome da sala");
 
          else if(modelo.NrCapacidadeMaxima <= 0)
             throw new ArgumentException("A capacidade maxima inválida");

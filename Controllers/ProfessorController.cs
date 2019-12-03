@@ -82,7 +82,7 @@ namespace Vivencia19ManhaAPI.Controllers
 
 
         [HttpGet("nome/{nome}")]
-	    public ActionResult<List<Models.TbProfessor>> ConsultarPorNome(string nome)
+	    public ActionResult<List<Models.TbProfessor>> ConsultarPporNome(string nome)
 	    {
             try
             {

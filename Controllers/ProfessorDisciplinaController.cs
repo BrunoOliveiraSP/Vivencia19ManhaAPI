@@ -17,11 +17,11 @@ namespace Vivencia19ManhaAPI.Controllers
         Business.ProfessorDisciplinaBusiness business = new Business.ProfessorDisciplinaBusiness();
 
         [HttpPost]
-        public ActionResult Inserir(Models.TbProfessorDisciplina profdisc)
+        public ActionResult Inserir(List<Models.ProfessorRequest> request)
         {
             try
             {
-                business.Inserir(profdisc);
+                business.Inserir(request);
                 return Ok();
             }
             catch (System.Exception ex)
@@ -68,6 +68,21 @@ namespace Vivencia19ManhaAPI.Controllers
             {
                 business.Alterar(profdisc);
                 return Ok();
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
+        }
+
+        [HttpGet("idprofessor/{Id}")]
+        public ActionResult<List<Models.TbProfessorDisciplina>> ListarPorIdProfessor(int id)
+        {
+            try
+            {
+                List<Models.TbProfessorDisciplina> list = business.ListarTodos(); 
+                return list;
             }
             catch (System.Exception ex)
             {

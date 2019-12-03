@@ -10,9 +10,9 @@ namespace Vivencia19ManhaAPI.Business
     public class ProfessorDisciplinaBusiness
     {
         Database.ProfessorDisciplinaDatabase db = new Database.ProfessorDisciplinaDatabase();
-            public void Inserir(Models.TbProfessorDisciplina profdisc)
+            public void Inserir(List<Models.ProfessorRequest> request)
             {
-                db.Inserir(profdisc);
+                db.Inserir(request);
             }
 
             public void Remover(int Id)
@@ -30,7 +30,11 @@ namespace Vivencia19ManhaAPI.Business
                 return db.ListarTodos();;
             }
 
-
+            public List<Models.TbProfessorDisciplina> ListarPorIdProfessor(int id)
+            {
+                List<Models.TbProfessorDisciplina> lista = db.ListarPorIdProfessor(id);
+                return lista;
+            }
 
     }
 }

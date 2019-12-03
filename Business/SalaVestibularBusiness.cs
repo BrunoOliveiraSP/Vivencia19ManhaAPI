@@ -16,7 +16,7 @@ namespace Vivencia19ManhaAPI.Business
           if(modelo.IdSala <= 0)
           throw new ArgumentException("O id da sala não pode ser igual a zero");
 
-          else if(modelo.DsPeriodo == string.Empty)
+          else if(string.IsNullOrEmpty(modelo.DsPeriodo))
           throw new ArgumentException("Preencha o periodo");
 
           else if(modelo.NrOrdem <= 0)
@@ -48,7 +48,7 @@ namespace Vivencia19ManhaAPI.Business
           else if(modelo.IdSala <= 0)
             throw new ArgumentException("O id da sala não pode ser igual a zero");
 
-          else if(modelo.DsPeriodo == string.Empty)
+          else if(string.IsNullOrEmpty(modelo.DsPeriodo))
           throw new ArgumentException("Preencha o periodo");
 
           else if(modelo.NrOrdem <= 0)

@@ -73,7 +73,7 @@ namespace Vivencia19ManhaAPI.Controllers
                 return StatusCode(500, erro);
             }
         }
-        [HttpGet("{Id}")]
+        [HttpGet("id/{Id}")]
 
          public Models.TbProfessor ConsultarPotId(int Id)
         {

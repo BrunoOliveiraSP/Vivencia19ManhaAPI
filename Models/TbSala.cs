@@ -16,10 +16,10 @@ namespace Vivencia19ManhaAPI.Models
         [Key]
         [Column("id_sala", TypeName = "int(11)")]
         public int IdSala { get; set; }
-        [Required]
+
         [Column("nm_local", TypeName = "varchar(100)")]
         public string NmLocal { get; set; }
-        [Required]
+
         [Column("nm_sala", TypeName = "varchar(50)")]
         public string NmSala { get; set; }
         [Column("nr_capacidade_maxima", TypeName = "int(11)")]

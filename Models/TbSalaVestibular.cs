@@ -18,7 +18,7 @@ namespace Vivencia19ManhaAPI.Models
         public int IdSalaVestibular { get; set; }
         [Column("id_sala", TypeName = "int(11)")]
         public int IdSala { get; set; }
-        [Required]
+
         [Column("ds_periodo", TypeName = "varchar(50)")]
         public string DsPeriodo { get; set; }
         [Column("nr_ordem", TypeName = "int(11)")]

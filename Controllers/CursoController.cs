@@ -28,6 +28,8 @@ namespace Vivencia19ManhaAPI.Controller
         {
             business.Remover(id);
         }
+        
+        
         [HttpGet]
         public List<Models.TbCurso> ConsultarCurso()
         {
@@ -36,15 +38,15 @@ namespace Vivencia19ManhaAPI.Controller
             return consulta;
         }
         
-        [HttpGet("{nome}")]
-        public List<Models.TbCurso> ConsultarPorId(string nome)
+        [HttpGet("ConsultarPorNome/{nome}")]
+        public List<Models.TbCurso> ConsultarPorNome(string nome)
         {
-            List<Models.TbCurso> consulta = business.ConsultarPorID(nome);
+            List<Models.TbCurso> consulta = business.ConsultarPorNome(nome);
 
             return consulta;
         }
 
-        [HttpGet("{sigla}")]
+        [HttpGet("ConsultarPorSigla/{sigla}")]
         public List<Models.TbCurso> ConsultarPorSigla(string sigla)
         {
             List<Models.TbCurso> consulta = business.ConsultarPorSigla(sigla);

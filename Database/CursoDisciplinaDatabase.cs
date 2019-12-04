@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 
 namespace Vivencia19ManhaAPI.Database
-{
+{//a
     public class CursoDisciplinaDatabase
     {
     Models.db_a5064d_freiContext db = new Models.db_a5064d_freiContext();

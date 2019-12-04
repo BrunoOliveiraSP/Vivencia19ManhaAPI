@@ -17,13 +17,6 @@ namespace Vivencia19ManhaAPI.Database
 
         db.SaveChanges();
     }
-    public bool ValidarIdDisciplina(Models.TbCursoDisciplina cursoDisciplina)
-    {
-        bool validar = db.TbCursoDisciplina.Any(x => x.IdDisciplina == cursoDisciplina.IdDisciplina);
-
-        return validar;
-    }
-
     public bool ValidarIdCurso(Models.TbCursoDisciplina cursoDisciplina)
     {
         bool validar = db.TbCursoDisciplina.Any(x => x.IdCurso == cursoDisciplina.IdCurso);
@@ -59,6 +52,7 @@ namespace Vivencia19ManhaAPI.Database
                                                                             ToList();
 
         return consulta;
+    
     }
     }
 }

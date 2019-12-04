@@ -33,6 +33,7 @@ namespace Vivencia19ManhaAPI.Business
 
         public bool Verificar(Models.TbDisciplina disciplina)
         {
+            //
             if(disciplina.BtAtivo <= 0)
                 return false;
             if(string.IsNullOrEmpty(disciplina.DsSigla))

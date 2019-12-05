@@ -17,9 +17,8 @@ namespace Vivencia19ManhaAPI.Database
 
             public void Inserir(Models.TbProfessorDisciplina profdisc)
             {
-                    db.TbProfessorDisciplina.Add(profdisc);
-                    db.SaveChanges();
-                          
+                db.TbProfessorDisciplina.Add(profdisc);
+                db.SaveChanges();       
             }
 
             public void Remover(int Id)

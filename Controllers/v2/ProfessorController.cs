@@ -43,5 +43,20 @@ namespace Vivencia19ManhaAPI.Controllers.v2
                 return StatusCode(500, erro);
             }
         }
+
+        [HttpGet("nome/{nome}")]
+        public ActionResult<List<Models.ProfessorResponse>> ListarPorNome(string nome)
+        {
+            try
+            {
+                List<Models.ProfessorResponse> lista = bussines.ListarPorNome(nome);
+                return lista;
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
+        }
     }
 }

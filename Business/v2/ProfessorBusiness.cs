@@ -45,6 +45,20 @@ namespace Vivencia19ManhaAPI.Business.v2
 
             return response;
         }
+        public List<Models.ProfessorResponse> ListarPorNome(string nome)
+        {
+            List<Models.TbProfessor> lista = dbProfessor.ConsultarPorNome(nome);
+
+            List<Models.ProfessorResponse> response = new List<ProfessorResponse>();
+
+            foreach(Models.TbProfessor item in lista)
+            {
+                Models.ProfessorResponse resp = CriarResponse(item);
+                response.Add(resp);
+            }
+
+            return response;
+        }
 
         private Models.ProfessorResponse CriarResponse(Models.TbProfessor prof)
         {

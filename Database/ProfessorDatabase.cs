@@ -55,7 +55,9 @@ namespace Vivencia19ManhaAPI.Database
 
         public List<Models.TbProfessor> ConsultarPorNome(string nome)
 	    {
-		List<Models.TbProfessor> list = db.TbProfessor.Where(x => x.NmProfessor.Contains(nome)).ToList();
+		List<Models.TbProfessor> list = db.TbProfessor.Where(x => x.NmProfessor.Contains(nome))
+                                        .Include(x => x.TbProfessorDisciplina)
+                                        .ToList();
 
 		return list;
 	    }

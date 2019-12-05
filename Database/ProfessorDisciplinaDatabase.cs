@@ -27,6 +27,18 @@ namespace Vivencia19ManhaAPI.Database
                 db.TbProfessorDisciplina.Remove(r);
                 db.SaveChanges();
             }
+
+            public void RemoverPorProfessor(int Id)
+            {
+                List<Models.TbProfessorDisciplina> r = db.TbProfessorDisciplina.Where(x =>x.IdProfessor == Id).ToList();
+                
+                foreach(Models.TbProfessorDisciplina item in r)
+                {
+                    db.TbProfessorDisciplina.Remove(item);
+                    db.SaveChanges();
+                }
+            }
+
             public void Alterar(Models.TbProfessorDisciplina profdisc)
             {
                Models.TbProfessorDisciplina novo = db.TbProfessorDisciplina.FirstOrDefault(x => x.IdProfessorDisciplina == profdisc.IdProfessorDisciplina);
@@ -46,6 +58,12 @@ namespace Vivencia19ManhaAPI.Database
             public Models.TbDisciplina ListarPorIdDisciplina(int id)
             {
                 Models.TbDisciplina lista = db.TbDisciplina.FirstOrDefault(x => x.IdDisciplina == id);
+                return lista;
+            }
+
+            public List<Models.TbProfessorDisciplina> ListarPorIdProfessor(int id)
+            {
+                List<Models.TbProfessorDisciplina> lista = db.TbProfessorDisciplina.Where(x => x.IdProfessor == id).ToList();
                 return lista;
             }
 

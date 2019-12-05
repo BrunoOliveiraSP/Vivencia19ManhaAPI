@@ -63,10 +63,13 @@ namespace Vivencia19ManhaAPI.Business.v2
         public void Alterar(Models.ProfessorRequest request)
         {
             ValidarProfessor(request.Professor);  
+
             if(request.Disciplina == null)
                 throw new ArgumentException("Especifique as disciplinas do professor");
 
             dbProfessor.Alterar(request.Professor);
+
+            dbProfessorDisciplina.RemoverPorProfessor(request.Professor.IdProfessor);
 
             foreach(Models.TbDisciplina disciplina in request.Disciplina)
             {
@@ -74,8 +77,14 @@ namespace Vivencia19ManhaAPI.Business.v2
                 profdisc.IdDisciplina = disciplina.IdDisciplina;
                 profdisc.IdProfessor = request.Professor.IdProfessor;
 
-                dbProfessorDisciplina.Alterar(profdisc);
+                dbProfessorDisciplina.Inserir(profdisc);
             }
+        }
+
+        public void Deletar(int id)
+        {
+            dbProfessorDisciplina.RemoverPorProfessor(id);
+            dbProfessor.Deletar(id);
         }
 
         private Models.ProfessorResponse CriarResponse(Models.TbProfessor prof)

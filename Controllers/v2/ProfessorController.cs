@@ -73,5 +73,20 @@ namespace Vivencia19ManhaAPI.Controllers.v2
                 return StatusCode(500, erro);
             }
         }
+
+        [HttpDelete("{id}")]
+        public ActionResult Remover(int id)
+        {
+            try
+            {
+                bussines.Deletar(id);
+                return Ok();    
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
+        }
     }
 }

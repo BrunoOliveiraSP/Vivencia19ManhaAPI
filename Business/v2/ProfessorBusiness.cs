@@ -46,6 +46,24 @@ namespace Vivencia19ManhaAPI.Business.v2
             return response;
         }
 
+        public void Alterar(Models.ProfessorRequest request)
+        {
+            ValidarProfessor(request.Professor);  
+            if(request.Disciplina == null)
+                throw new ArgumentException("Especifique as disciplinas do professor");
+
+            dbProfessor.Alterar(request.Professor);
+
+            foreach(Models.TbDisciplina disciplina in request.Disciplina)
+            {
+                Models.TbProfessorDisciplina profdisc = new TbProfessorDisciplina();
+                profdisc.IdDisciplina = disciplina.IdDisciplina;
+                profdisc.IdProfessor = request.Professor.IdProfessor;
+
+                dbProfessorDisciplina.Alterar(profdisc);
+            }
+        }
+
         private Models.ProfessorResponse CriarResponse(Models.TbProfessor prof)
         {
             Models.ProfessorResponse response = new Models.ProfessorResponse();

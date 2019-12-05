@@ -43,5 +43,20 @@ namespace Vivencia19ManhaAPI.Controllers.v2
                 return StatusCode(500, erro);
             }
         }
+
+         [HttpPut]
+        public ActionResult<Models.ProfessorRequest> Alterar(Models.ProfessorRequest request)
+        {
+            try
+            {
+                bussines.Alterar(request);
+                return request;    
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
+        }
     }
 }

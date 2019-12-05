@@ -6,50 +6,84 @@ using System.Linq.Expressions;
 using Vivencia19ManhaAPI.Models;
 using System.Globalization;
 
-namespace Vivencia19ManhaAPI.Business
-{   
+namespace Vivencia19ManhaAPI.Business.v2
+{
     public class ProfessorBusiness
     {
         Database.ProfessorDatabase dbProfessor = new Database.ProfessorDatabase();
         Database.ProfessorDisciplinaDatabase dbProfessorDisciplina = new Database.ProfessorDisciplinaDatabase();
 
-        public void Inserir(Models.TbProfessor professor)
+        public void Inserir(Models.ProfessorRequest request)
         {
-            ValidarProfessor(professor);  
+            ValidarProfessor(request.Professor);  
+            if(request.Disciplina == null)
+                throw new ArgumentException("Especifique as disciplinas do professor");
 
-            dbProfessor.Inserir(professor);
-        }
-       
-        public void Deletar(int id)
-        {
-            if (id == 0)
-                throw new ArgumentException("Id não informado ou igual a 0");
+            dbProfessor.Inserir(request.Professor);
 
-                dbProfessor.Deletar(id);
+            foreach(Models.TbDisciplina disciplina in request.Disciplina)
+            {
+                Models.TbProfessorDisciplina profdisc = new TbProfessorDisciplina();
+                profdisc.IdDisciplina = disciplina.IdDisciplina;
+                profdisc.IdProfessor = request.Professor.IdProfessor;
+
+                dbProfessorDisciplina.Inserir(profdisc);
+            }
         }
 
-        public void Alterar(Models.TbProfessor professor)
-        {
-            ValidarProfessor(professor);
-            dbProfessor.Alterar(professor);
-        }
-        public List<Models.TbProfessor> ListarTodos()
+        public List<Models.ProfessorResponse> ListarTodos()
         {
             List<Models.TbProfessor> lista = dbProfessor.ListarTodos();
-            return lista;
+
+            List<Models.ProfessorResponse> response = new List<ProfessorResponse>();
+
+            foreach(Models.TbProfessor item in lista)
+            {
+                Models.ProfessorResponse resp = CriarResponse(item);
+                response.Add(resp);
+            }
+
+            return response;
         }
-         public Models.TbProfessor ConsultarPotId(int Id)
+
+        private Models.ProfessorResponse CriarResponse(Models.TbProfessor prof)
         {
-           return dbProfessor.ConsultarPotId(Id);
-            
+            Models.ProfessorResponse response = new Models.ProfessorResponse();
+            response.DsCelular = prof.DsCelular;
+            response.DsCpf = prof.DsCpf;
+            response.DsCurso = prof.DsCurso;
+            response.DsCvLattes = prof.DsCvLattes;
+            response.DsEmail = prof.DsEmail;
+            response.DsEstado = prof.DsEstado;
+            response.DsFaculdade = prof.DsFaculdade;
+            response.DsRg = prof.DsRg;
+            response.DsRgEmissor = prof.DsRgEmissor;
+            response.DsRgOrgao = prof.DsRgOrgao;
+            response.DsTelefone = prof.DsTelefone;
+            response.DtFaculdadeFim = prof.DtFaculdadeFim;
+            response.DtFaculdadeInicio = prof.DtFaculdadeInicio;
+            response.DtNascimento = prof.DtNascimento;
+            response.IdLogin = prof.IdLogin;
+            response.IdProfessor = prof.IdProfessor;
+            response.NmMae = prof.NmMae;
+            response.NmPai = prof.NmPai;
+            response.NmProfessor = prof.NmProfessor;
+            response.NrAnoPrimeiroEmprego = prof.NrAnoPrimeiroEmprego;
+            response.TpContratacao = prof.TpContratacao;
+            response.BtAtivo = prof.BtAtivo;
+
+            List<Models.TbDisciplina> disciplinas = new List<TbDisciplina>();
+
+            foreach(Models.TbProfessorDisciplina item in prof.TbProfessorDisciplina)
+            {
+                Models.TbDisciplina disciplina = dbProfessorDisciplina.ListarPorIdDisciplina(item.IdDisciplina);
+                disciplinas.Add(disciplina);
+            }
+
+            response.Disciplina = disciplinas;
+
+            return response;
         }
-
-	    public List<Models.TbProfessor> ConsultarPorNome(string nome)
-	    {
-		    List<Models.TbProfessor> list = dbProfessor.ConsultarPorNome(nome);
-
-		    return list;
-    	}
 
         private void ValidarProfessor(Models.TbProfessor professor)
         {

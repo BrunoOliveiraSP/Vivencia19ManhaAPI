@@ -4,6 +4,7 @@ using System.Collections;
 using System.Linq;
 using System.Linq.Expressions;
 using Vivencia19ManhaAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Vivencia19ManhaAPI.Database
 {
@@ -46,7 +47,9 @@ namespace Vivencia19ManhaAPI.Database
         }
         public List<Models.TbProfessor> ListarTodos()
         {
-            List<Models.TbProfessor> lista =  db.TbProfessor.ToList();
+            List<Models.TbProfessor> lista = db.TbProfessor
+                                             .Include(x => x.TbProfessorDisciplina)
+                                             .ToList();
             return lista;
         }
 

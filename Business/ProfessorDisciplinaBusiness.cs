@@ -30,11 +30,11 @@ namespace Vivencia19ManhaAPI.Business
                 return db.ListarTodos();;
             }
 
-            public List<Models.TbProfessorDisciplina> ListarPorIdProfessor(int id)
-            {
-                List<Models.TbProfessorDisciplina> lista = db.ListarPorIdProfessor(id);
-                return lista;
-            }
+            // public List<Models.TbProfessorDisciplina> ListarPorIdProfessor(int id)
+            // {
+            //     List<Models.TbProfessorDisciplina> lista = db.ListarPorIdProfessor(id);
+            //     return lista;
+            // }
 
     }
 }

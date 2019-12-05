@@ -12,7 +12,7 @@ namespace Vivencia19ManhaAPI.Controllers.v2
     [Route("v2/[controller]")]
     public class ProfessorController : ControllerBase
     {
-        Business.ProfessorBusiness bussines = new Business.ProfessorBusiness();
+        Business.v2.ProfessorBusiness bussines = new Business.v2.ProfessorBusiness();
 
         [HttpPost]
         public ActionResult<Models.ProfessorRequest> Inserir(Models.ProfessorRequest request)
@@ -30,11 +30,11 @@ namespace Vivencia19ManhaAPI.Controllers.v2
         }
 
         [HttpGet]
-        public ActionResult<List<Models.TbProfessor>> ListarTodos()
+        public ActionResult<List<Models.ProfessorResponse>> ListarTodos()
         {
             try
             {
-                List<Models.TbProfessor> lista = bussines.ListarTodos();
+                List<Models.ProfessorResponse> lista = bussines.ListarTodos();
                 return lista;
             }
             catch (System.Exception ex)

@@ -43,9 +43,9 @@ namespace Vivencia19ManhaAPI.Database
                 return lista;
             }
 
-            public List<Models.TbProfessorDisciplina> ListarPorIdProfessor(int id)
+            public Models.TbDisciplina ListarPorIdDisciplina(int id)
             {
-                List<Models.TbProfessorDisciplina> lista = db.TbProfessorDisciplina.Where(x => x.IdProfessor == id).ToList();
+                Models.TbDisciplina lista = db.TbDisciplina.FirstOrDefault(x => x.IdDisciplina == id);
                 return lista;
             }
 

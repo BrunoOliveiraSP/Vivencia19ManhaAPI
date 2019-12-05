@@ -15,17 +15,11 @@ namespace Vivencia19ManhaAPI.Database
             db_a5064d_freiContext db = new db_a5064d_freiContext();
 
 
-            public void Inserir(List<Models.ProfessorRequest> request)
+            public void Inserir(Models.TbProfessorDisciplina profdisc)
             {
-                foreach(Models.ProfessorRequest item in request)
-                {
-                    TbProfessorDisciplina profdisc = new TbProfessorDisciplina();
-                    profdisc.IdProfessor = item.Professor.IdProfessor;
-                    profdisc.IdDisciplina = item.Disciplina.IdDisciplina;
-
                     db.TbProfessorDisciplina.Add(profdisc);
                     db.SaveChanges();
-                }            
+                          
             }
 
             public void Remover(int Id)

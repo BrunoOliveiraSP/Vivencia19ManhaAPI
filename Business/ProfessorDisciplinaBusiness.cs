@@ -10,9 +10,9 @@ namespace Vivencia19ManhaAPI.Business
     public class ProfessorDisciplinaBusiness
     {
         Database.ProfessorDisciplinaDatabase db = new Database.ProfessorDisciplinaDatabase();
-            public void Inserir(List<Models.ProfessorRequest> request)
+            public void Inserir(Models.TbProfessorDisciplina profdisc)
             {
-                db.Inserir(request);
+                db.Inserir(profdisc);
             }
 
             public void Remover(int Id)

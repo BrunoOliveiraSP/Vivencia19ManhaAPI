@@ -28,5 +28,20 @@ namespace Vivencia19ManhaAPI.Controllers.v2
                 return StatusCode(500, erro);
             }
         }
+
+        [HttpGet]
+        public ActionResult<List<Models.TbProfessor>> ListarTodos()
+        {
+            try
+            {
+                List<Models.TbProfessor> lista = bussines.ListarTodos();
+                return lista;
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
+        }
     }
 }

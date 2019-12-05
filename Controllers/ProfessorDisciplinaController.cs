@@ -17,11 +17,11 @@ namespace Vivencia19ManhaAPI.Controllers
         Business.ProfessorDisciplinaBusiness business = new Business.ProfessorDisciplinaBusiness();
 
         [HttpPost]
-        public ActionResult Inserir(List<Models.ProfessorRequest> request)
+        public ActionResult Inserir(Models.TbProfessorDisciplina profdisc)
         {
             try
             {
-                business.Inserir(request);
+                business.Inserir(profdisc);
                 return Ok();
             }
             catch (System.Exception ex)

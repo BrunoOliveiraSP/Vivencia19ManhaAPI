@@ -15,19 +15,19 @@ namespace Vivencia19ManhaAPI.Controllers
        Business.ProfessorBusiness bussines = new Business.ProfessorBusiness();
 
         [HttpPost]
-        public ActionResult Inserir(Models.TbProfessor professor)
-        {
-            try
-            {
-                bussines.Inserir(professor);
-                return Ok();    
-            }
-            catch (System.Exception ex)
-            {
-                ErrorModel erro = new ErrorModel(500, ex.Message);
-                return StatusCode(500, erro);
-            }
-        }
+        // public ActionResult Inserir(Models.TbProfessor professor)
+        // {
+        //     try
+        //     {
+        //         bussines.Inserir(professor);
+        //         return Ok();    
+        //     }
+        //     catch (System.Exception ex)
+        //     {
+        //         ErrorModel erro = new ErrorModel(500, ex.Message);
+        //         return StatusCode(500, erro);
+        //     }
+        // }
 
         [HttpPut]
         public ActionResult Alterar(Models.TbProfessor professor)

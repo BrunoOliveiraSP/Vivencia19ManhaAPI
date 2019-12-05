@@ -10,12 +10,23 @@ namespace Vivencia19ManhaAPI.Business
 {   
     public class ProfessorBusiness
     {
-        Database.ProfessorDatabase db = new Database.ProfessorDatabase();
+        Database.ProfessorDatabase dbProfessor = new Database.ProfessorDatabase();
+        Database.ProfessorDisciplinaDatabase dbProfessorDisciplina = new Database.ProfessorDisciplinaDatabase();
 
-        public void Inserir(Models.TbProfessor professor)
+        public void Inserir(Models.ProfessorRequest request)
         {
-            ValidarProfessor(professor);    
-            db.Inserir(professor);
+            ValidarProfessor(request.Professor);  
+
+            dbProfessor.Inserir(request.Professor);
+
+            foreach(Models.TbDisciplina disciplina in request.Disciplina)
+            {
+                Models.TbProfessorDisciplina profdisc = new TbProfessorDisciplina();
+                profdisc.IdDisciplina = disciplina.IdDisciplina;
+                profdisc.IdProfessor = request.Professor.IdProfessor;
+
+                dbProfessorDisciplina.Inserir(profdisc);
+            }
         }
        
         public void Deletar(int id)
@@ -23,28 +34,28 @@ namespace Vivencia19ManhaAPI.Business
             if (id == 0)
                 throw new ArgumentException("Id não informado ou igual a 0");
 
-                db.Deletar(id);
+                dbProfessor.Deletar(id);
         }
 
         public void Alterar(Models.TbProfessor professor)
         {
             ValidarProfessor(professor);
-            db.Alterar(professor);
+            dbProfessor.Alterar(professor);
         }
         public List<Models.TbProfessor> ListarTodos()
         {
-            List<Models.TbProfessor> lista = db.ListarTodos();
+            List<Models.TbProfessor> lista = dbProfessor.ListarTodos();
             return lista;
         }
          public Models.TbProfessor ConsultarPotId(int Id)
         {
-           return db.ConsultarPotId(Id);
+           return dbProfessor.ConsultarPotId(Id);
             
         }
 
 	    public List<Models.TbProfessor> ConsultarPorNome(string nome)
 	    {
-		    List<Models.TbProfessor> list = db.ConsultarPorNome(nome);
+		    List<Models.TbProfessor> list = dbProfessor.ConsultarPorNome(nome);
 
 		    return list;
     	}

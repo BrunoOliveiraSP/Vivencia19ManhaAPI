@@ -21,9 +21,18 @@ namespace Vivencia19ManhaAPI.Controllers
         }
 
         [HttpPost("Inserir")]
-         public void Insert (Models.TbDisciplina livro)
+        public ActionResult<Models.TbDisciplina> Insert (Models.TbDisciplina livro)
         {
-          busi.Inserir(livro);
+          try
+          {
+              busi.Inserir(livro);
+              return livro;
+          }
+          catch(System.ArgumentException ex)
+          {
+              Models.ErrorModel erro = new Models.ErrorModel(500,ex.Message);
+              return StatusCode(500,erro);
+          }
         }
 
         [HttpDelete("Remover/{id}")]

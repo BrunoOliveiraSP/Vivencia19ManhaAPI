@@ -25,7 +25,7 @@ namespace Vivencia19ManhaAPI.Business
             db.InserirDisciplina(disciplina);
         }
 
-        internal void Alterar(Models.TbDisciplina disciplina)
+        public void Alterar(Models.TbDisciplina disciplina)
         {
             if(Verificar(disciplina))
                 db.Alterar(disciplina);
@@ -33,9 +33,6 @@ namespace Vivencia19ManhaAPI.Business
 
         public bool Verificar(Models.TbDisciplina disciplina)
         {
-            //
-            if(disciplina.BtAtivo <= 0)
-                return false;
             if(string.IsNullOrEmpty(disciplina.DsSigla))
                 return false;
             if(string.IsNullOrEmpty(disciplina.DtInclusao.ToString()))

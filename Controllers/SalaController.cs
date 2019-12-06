@@ -19,12 +19,12 @@ namespace Vivencia19ManhaAPI.Controllers
 
 
          [HttpPost]
-         public ActionResult Inserir(Models.TbSala modelo)
+         public ActionResult<Models.TbSala> Inserir(Models.TbSala modelo)
          {
             try
             {
                business.Inserir(modelo);
-               return Ok();
+               return modelo;
             }
             catch(System.ArgumentException ex)
             {

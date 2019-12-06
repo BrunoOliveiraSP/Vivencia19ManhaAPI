@@ -22,18 +22,25 @@ namespace Vivencia19ManhaAPI.Models
         [Key]
         [Column("id_disciplina", TypeName = "int(11)")]
         public int IdDisciplina { get; set; }
-        [Required]
+        //[Required]
         [Column("nm_disciplina", TypeName = "varchar(50)")]
         public string NmDisciplina { get; set; }
-        [Required]
+        //[Required]
         [Column("ds_sigla", TypeName = "varchar(50)")]
         public string DsSigla { get; set; }
+        
         [Column("bt_ativo", TypeName = "bit(1)")]
         public ulong BtAtivo { get; set; }
+        
+        
         [Column("dt_ultima_alteracao", TypeName = "datetime")]
         public DateTime DtUltimaAlteracao { get; set; }
+        
+        
         [Column("dt_inclusao", TypeName = "datetime")]
         public DateTime DtInclusao { get; set; }
+        
+        
         [Column("id_funcionario_alteracao", TypeName = "int(11)")]
         public int IdFuncionarioAlteracao { get; set; }
 

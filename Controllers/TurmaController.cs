@@ -10,36 +10,66 @@ namespace Vivencia19ManhaAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class TurmaController:ControllerBase
+    public class TurmaController : ControllerBase
     {
         Business.TurmaBusiness business = new Business.TurmaBusiness();
 
         [HttpPost]
-        public void InserirTurma(Models.TbTurma modelo)
+        public ActionResult InserirTurma(Models.TbTurma modelo)
         {
-            business.InserirTurma(modelo);
+            try
+            {
+                business.InserirTurma(modelo);
+                return Ok();    
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
         [HttpGet]
-         public List<Models.TbTurma> ConsultarTurma()
+         public ActionResult<List<Models.TbTurma>> ConsultarTurma()
         {
-           List<Models.TbTurma> lista =  business.ConsultarTurma();
-           return lista;
+            try
+            {
+                List<Models.TbTurma> lista =  business.ConsultarTurma();
+                return lista;    
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
+
         [HttpPut]
-        public void AlterarTurma(Models.TbTurma modelo)
+        public ActionResult AlterarTurma(Models.TbTurma modelo)
         {
-            business.AlterarTurma(modelo);
+            try
+            {
+                business.AlterarTurma(modelo);
+                return Ok();    
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
         [HttpDelete("{id}")]
-         public void RemoverTurma(int id)
+         public ActionResult RemoverTurma(int id)
         {
-            business.RemoverTurma(id);
+            try
+            {
+                business.RemoverTurma(id);
+                return Ok();    
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
-        
-
     }
-    
-     
-    
-    
 }

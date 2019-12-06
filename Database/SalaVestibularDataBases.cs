@@ -48,5 +48,14 @@ namespace Vivencia19ManhaAPI.Database
            return sala;
 
        }
+       public void DeletarPorSala(int id)
+       {
+           List<Models.TbSalaVestibular> salas = db.TbSalaVestibular.Where(t => t.IdSala == id).ToList();
+
+           foreach(var item in salas)
+           {
+               Deletar(item.IdSalaVestibular);
+           }
+       }
     }
 }

@@ -66,5 +66,12 @@ namespace Vivencia19ManhaAPI.Business
            TbSalaVestibular sala = db.BuscarPorID(id);
            return sala;
        }
+       public void DeletarPorSala(int id)
+       {
+           if(id == 0)
+          throw new ArgumentException("O id não pode ser igual a zero");
+
+           db.DeletarPorSala(id);
+       }
     }
 }

@@ -42,6 +42,10 @@ namespace Vivencia19ManhaAPI.Business
           if(id == 0)
           throw new ArgumentException("O id nao pode ser igual a zero");
 
+          Business.SalaVestibularBusiness business = new SalaVestibularBusiness();
+          TbSala sala = db.BuscarPorID(id);
+
+          business.DeletarPorSala(sala.IdSala);
            db.Deletar(id);
        }
        public void Alterar(TbSala modelo)

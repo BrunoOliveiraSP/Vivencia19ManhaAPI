@@ -10,34 +10,69 @@ namespace Vivencia19ManhaAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class AnoLetivoController
+    public class AnoLetivoController : ControllerBase
     {
         Business.AnoLetivoBusiness business = new  Business.AnoLetivoBusiness();
 
         [HttpPost]
-        public void Inserir(Models.TbAnoLetivo anoLetivo)
+        public ActionResult Inserir(Models.TbAnoLetivo anoLetivo)
         {
-            business.Inserir(anoLetivo);
+            try
+            {
+                business.Inserir(anoLetivo);
+                return Ok();    
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
 
         [HttpPut]
-        public void Alterar(Models.TbAnoLetivo anoLetivo)
+        public ActionResult Alterar(Models.TbAnoLetivo anoLetivo)
         {
-            business.Alterar(anoLetivo);
+            try
+            {
+                business.Alterar(anoLetivo);
+                return Ok();    
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
 
         [HttpDelete("{id}")]
-        public void Remover(int id)
+        public ActionResult Remover(int id)
         {
-            business.Deletar(id);
+            try
+            {
+                business.Deletar(id);
+                return Ok();    
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
 
         [HttpGet]
-        public List<Models.TbAnoLetivo> ConsultarTodos()
+        public ActionResult<List<Models.TbAnoLetivo>> ConsultarTodos()
         {
-            List<Models.TbAnoLetivo> lista = business.ConsultarTodos();
-
-            return lista;
+            try
+            {
+                List<Models.TbAnoLetivo> lista = business.ConsultarTodos();
+                return lista;
+            }
+            catch(Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
+            
         }
     }
 }

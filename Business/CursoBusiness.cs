@@ -58,18 +58,11 @@ namespace Vivencia19ManhaAPI.Business
         {
             if(id <= 0)  
                 throw new Exception("Ocorreu um erro. Insira um ID de curso para remover no sistema");
-            db.Remover(id);
-        }
-        public void RemoverCusoDisciplina(int id)
-        {
-            if(id <= 0)  
-                throw new Exception("Ocorreu um erro. Insira um ID de curso para remover no sistema");
             
             bool validar = db.ValidarRemover(id);
             if(validar == true)
                 throw new Exception("Ocorreu um erro. Impossivel remover um curso vinculado a alguma disciplina");
         
-
             db.Remover(id);
         }
         public List<Models.TbCurso> Consultar()

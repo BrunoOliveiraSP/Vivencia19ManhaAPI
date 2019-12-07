@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace Vivencia19ManhaAPI.Database
 {
@@ -23,8 +23,8 @@ namespace Vivencia19ManhaAPI.Database
      }
         public List<Models.TbTurma> ConsultarTurma()
         {
-             List<Models.TbTurma> lista = db.TbTurma.ToList();
-              return lista;
+            List<Models.TbTurma> lista = db.TbTurma.ToList();
+            return lista;
         }
          public void AlterarTurma(Models.TbTurma modelo)
         {

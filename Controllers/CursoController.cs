@@ -13,45 +13,96 @@ namespace Vivencia19ManhaAPI.Controller
     {
         Business.CursoBusiness business = new Business.CursoBusiness();
         [HttpPost]
-        public void InserirCurso(Models.TbCurso curso)
+        public ActionResult InserirCurso(Models.TbCurso curso)
         {
+            try
+            {
             business.InserirCurso(curso);
+            return Ok();
+            }
+            catch (System.Exception ex)
+            {
+                Models.ErrorModel erro = new Models.ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
         
         [HttpPut]
-        public void AlterarCurso(Models.TbCurso curso)
+        public ActionResult AlterarCurso(Models.TbCurso curso)
         {
-            business.Alterar(curso);
+           try
+           {
+                business.Alterar(curso);
+                return Ok();
+           }
+           catch(System.Exception ex)
+           {
+               Models.ErrorModel erro = new Models.ErrorModel(500, ex.Message);
+               return StatusCode(500, erro);
+           }
         }
         [HttpDelete("{id}")]
-        public void RemoverCurso(int id)
+        public ActionResult RemoverCurso(int id)
         {
+            try
+            {
             business.Remover(id);
+            return Ok();
+            }
+
+            catch(System.Exception ex)
+            {
+                Models.ErrorModel erro = new Models.ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
         
         
         [HttpGet]
-        public List<Models.TbCurso> ConsultarCurso()
+        public ActionResult<List<Models.TbCurso>> ConsultarCurso()
         {
+            try
+            {
             List<Models.TbCurso> consulta = business.Consultar();
 
             return consulta;
+            }
+            catch(System.Exception ex)
+            {
+                Models.ErrorModel erro = new Models.ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
         
         [HttpGet("ConsultarPorNome/{nome}")]
-        public List<Models.TbCurso> ConsultarPorNome(string nome)
+        public ActionResult<List<Models.TbCurso>> ConsultarPorNome(string nome)
         {
+            try
+            {
             List<Models.TbCurso> consulta = business.ConsultarPorNome(nome);
 
             return consulta;
+            }
+            catch(System.Exception ex)
+            {
+                Models.ErrorModel erro = new Models.ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
 
         [HttpGet("ConsultarPorSigla/{sigla}")]
-        public List<Models.TbCurso> ConsultarPorSigla(string sigla)
+        public ActionResult<List<Models.TbCurso>> ConsultarPorSigla(string sigla)
         {
+            try{
             List<Models.TbCurso> consulta = business.ConsultarPorSigla(sigla);
 
             return consulta;
+            }
+            catch(System.Exception ex)
+            {
+                Models.ErrorModel erro = new Models.ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
         }
     }
 }

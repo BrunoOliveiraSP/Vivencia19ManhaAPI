@@ -36,11 +36,18 @@ namespace Vivencia19ManhaAPI.Database
         }
         public void Remover(int id)
         {
-            Models.TbCurso remover = db.TbCurso.FirstOrDefault(x => x.IdCurso == id);
-            db.Remove(remover);
+            Models.TbCurso removerCurso = db.TbCurso.FirstOrDefault(x => x.IdCurso == id);
+            db.Remove(removerCurso);
             db.SaveChanges();
+        } 
+
+        public bool ValidarRemover(int id)
+        {
+            bool validar = db.TbCursoDisciplina.Any(x => x.IdCurso == id);
+            
+            return validar;
         }
-        public List<Models.TbCurso> Consultar()
+        public  List<Models.TbCurso> Consultar()
         {
             List<Models.TbCurso> Listar = db.TbCurso.OrderBy(x => x.NmCurso).ToList();
             return Listar;

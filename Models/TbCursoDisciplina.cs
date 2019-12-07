@@ -18,10 +18,10 @@ namespace Vivencia19ManhaAPI.Models
         [Column("nr_carga_horaria", TypeName = "int(11)")]
         public int NrCargaHoraria { get; set; }
 
-        [ForeignKey(nameof(IdCurso))]
+        
         [InverseProperty(nameof(TbCurso.TbCursoDisciplina))]
         public virtual TbCurso IdCursoNavigation { get; set; }
-        [ForeignKey(nameof(IdDisciplina))]
+        
         [InverseProperty(nameof(TbDisciplina.TbCursoDisciplina))]
         public virtual TbDisciplina IdDisciplinaNavigation { get; set; }
     }

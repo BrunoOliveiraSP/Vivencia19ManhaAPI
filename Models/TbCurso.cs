@@ -21,11 +21,11 @@ namespace Vivencia19ManhaAPI.Models
         [Column("id_curso", TypeName = "int(11)")]
          public int IdCurso { get; set; }
         
-        [Required]
+        
         [Column("nm_curso", TypeName = "varchar(50)")]
         public string NmCurso { get; set; }
        
-        [Required]
+        
         [Column("ds_sigla", TypeName = "varchar(50)")]
         public string DsSigla { get; set; }
         [Column("nr_capacidade_maxima", TypeName = "int(11)")]
@@ -38,7 +38,7 @@ namespace Vivencia19ManhaAPI.Models
         public DateTime DtUltimaAlteracao { get; set; }
         [Column("id_funcionario_alteracao", TypeName = "int(11)")]
         public int IdFuncionarioAlteracao { get; set; }
-        [Required]
+        
         [Column("ds_categoria", TypeName = "varchar(50)")]
         public string DsCategoria { get; set; }
 

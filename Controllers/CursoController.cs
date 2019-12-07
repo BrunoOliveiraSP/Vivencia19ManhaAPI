@@ -13,7 +13,7 @@ namespace Vivencia19ManhaAPI.Controller
     {
         Business.CursoBusiness business = new Business.CursoBusiness();
         [HttpPost]
-        public ActionResult InserirCurso(Models.TbCurso curso)
+        public ActionResult<Models.TbCurso> InserirCurso(Models.TbCurso curso)
         {
             try
             {
@@ -28,7 +28,7 @@ namespace Vivencia19ManhaAPI.Controller
         }
         
         [HttpPut]
-        public ActionResult AlterarCurso(Models.TbCurso curso)
+        public ActionResult<Models.TbCurso> AlterarCurso(Models.TbCurso curso)
         {
            try
            {
@@ -42,7 +42,7 @@ namespace Vivencia19ManhaAPI.Controller
            }
         }
         [HttpDelete("{id}")]
-        public ActionResult RemoverCurso(int id)
+        public ActionResult<Models.TbCurso> RemoverCurso(int id)
         {
             try
             {

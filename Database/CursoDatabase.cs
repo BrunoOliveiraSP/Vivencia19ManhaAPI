@@ -28,7 +28,9 @@ namespace Vivencia19ManhaAPI.Database
             Models.TbCurso alterar = db.TbCurso.FirstOrDefault(x => x.IdCurso == curso.IdCurso);
             alterar.NmCurso = curso.NmCurso;
             alterar.DsSigla = curso.DsSigla;
+            alterar.DsCategoria = curso.DsCategoria;
             alterar.NrCapacidadeMaxima = curso.NrCapacidadeMaxima;
+            alterar.BtAtivo = curso.BtAtivo;
             
             db.SaveChanges();
         }

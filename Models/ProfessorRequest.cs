@@ -8,6 +8,8 @@ namespace Vivencia19ManhaAPI.Models
     {
         public TbProfessor Professor { get; set;}
 
+        public TbLogin Login { get; set;}
+
         public List<TbDisciplina> Disciplina { get; set; }
     }
 }

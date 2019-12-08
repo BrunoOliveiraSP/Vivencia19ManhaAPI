@@ -53,5 +53,7 @@ namespace Vivencia19ManhaAPI.Models
         public List<TbDisciplina> DisciplinaProfessor { get; set; }
 
         public List<TbDisciplina> DisciplinaDisponiveis { get; set; }
+
+        public TbLogin Login { get; set; }
     }
 }

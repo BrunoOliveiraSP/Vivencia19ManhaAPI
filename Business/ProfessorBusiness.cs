@@ -13,12 +13,19 @@ namespace Vivencia19ManhaAPI.Business
         Database.ProfessorDatabase dbProfessor = new Database.ProfessorDatabase();
         Database.ProfessorDisciplinaDatabase dbProfessorDisciplina = new Database.ProfessorDisciplinaDatabase();
         Database.diciplinaDatabase dbDisciplina = new Database.diciplinaDatabase();
+        Database.LoginDatabase dbLogin = new Database.LoginDatabase();
 
         public void Inserir(Models.ProfessorRequest request)
         {
             ValidarProfessor(request.Professor);  
             if(request.Disciplina == null)
                 throw new ArgumentException("Especifique as disciplinas do professor");
+            if(request.Login.DsLogin.Length < 3)
+                throw new ArgumentException("Login muito curto");
+            
+            dbLogin.Inserir(request.Login);
+
+            request.Professor.IdLogin = request.Login.IdLogin;
 
             dbProfessor.Inserir(request.Professor);
 
@@ -40,7 +47,8 @@ namespace Vivencia19ManhaAPI.Business
 
             foreach(Models.TbProfessor item in lista)
             {
-                Models.ProfessorResponse resp = CriarResponse(item);
+                Models.TbLogin login = dbLogin.BuscarPorID(item.IdLogin);
+                Models.ProfessorResponse resp = CriarResponse(item, login);
                 response.Add(resp);
             }
 
@@ -54,7 +62,8 @@ namespace Vivencia19ManhaAPI.Business
 
             foreach(Models.TbProfessor item in lista)
             {
-                Models.ProfessorResponse resp = CriarResponse(item);
+                Models.TbLogin login = dbLogin.BuscarPorID(item.IdLogin);
+                Models.ProfessorResponse resp = CriarResponse(item, login);
                 response.Add(resp);
             }
 
@@ -65,8 +74,12 @@ namespace Vivencia19ManhaAPI.Business
         {
             ValidarProfessor(request.Professor);  
 
-            if(request.Disciplina == null)
+            if(request.Disciplina == null || request.Disciplina.Count == 0)
                 throw new ArgumentException("Especifique as disciplinas do professor");
+            if(request.Login.DsLogin.Length < 3)
+                throw new ArgumentException("Login muito curto");
+
+            dbLogin.Alterar(request.Login);
 
             dbProfessor.Alterar(request.Professor);
 
@@ -88,7 +101,7 @@ namespace Vivencia19ManhaAPI.Business
             dbProfessor.Deletar(id);
         }
 
-        private Models.ProfessorResponse CriarResponse(Models.TbProfessor prof)
+        private Models.ProfessorResponse CriarResponse(Models.TbProfessor prof, Models.TbLogin login)
         {
             Models.ProfessorResponse response = new Models.ProfessorResponse();
             response.DsCelular = prof.DsCelular;
@@ -113,6 +126,8 @@ namespace Vivencia19ManhaAPI.Business
             response.NrAnoPrimeiroEmprego = prof.NrAnoPrimeiroEmprego;
             response.TpContratacao = prof.TpContratacao;
             response.BtAtivo = prof.BtAtivo;
+            
+            response.Login = login;
 
             List<Models.TbDisciplina> disciplinas = new List<TbDisciplina>();
 

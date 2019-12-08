@@ -24,7 +24,7 @@ namespace Vivencia19ManhaAPI.Database
        }
        public List<TbSala> ConsultarPorInstituicao(string nome)
        {
-           List<TbSala> salas = db.TbSala.Where(t => t.NmLocal.Contains(nome)).OrderBy(t => t.NmSala).ToList();
+           List<TbSala> salas = db.TbSala.Where(t => t.NmLocal.ToLower().Contains(nome.ToLower())).OrderBy(t => t.NmSala).ToList();
            return salas;
        }
        public void Deletar(int id)
@@ -52,6 +52,11 @@ namespace Vivencia19ManhaAPI.Database
 
          db.SaveChanges();
 
+       }
+       public bool VerificarNome(string nome)
+       {
+           bool existe = db.TbSala.Any(t => t.NmSala.ToLower() == nome.ToLower() );
+           return existe;
        }
        
     }

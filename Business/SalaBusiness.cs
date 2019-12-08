@@ -10,22 +10,12 @@ namespace Vivencia19ManhaAPI.Business
 {
     public class SalaBusiness
     {
-        
+    Business.SalaVestibularBusiness business = new SalaVestibularBusiness();
     Database.SalaDatabase db = new SalaDatabase();
 
       public void Inserir(TbSala modelo)
       {
-          if(string.IsNullOrEmpty(modelo.NmLocal) == true)
-            throw new ArgumentException("Coloque o nome do local");
-
-          else if(string.IsNullOrEmpty(modelo.NmSala) == true)
-            throw new ArgumentException("Coloque o nome da sala");
-
-         else if(modelo.NrCapacidadeMaxima <= 0)
-            throw new ArgumentException("A capacidade maxima inválida");
-
-          else if( modelo.IdFuncionarioAlteracao <= 0)
-            throw new ArgumentException("Informe um funcionário");
+          ValidarSala(modelo);
 
           modelo.DtAlteracao = DateTime.Now;
           modelo.DtInclusao = DateTime.Now;
@@ -39,10 +29,8 @@ namespace Vivencia19ManhaAPI.Business
        }
        public void Deletar(int id)
        {
-          if(id == 0)
-          throw new ArgumentException("O id nao pode ser igual a zero");
+          ValidarID(id);
 
-          Business.SalaVestibularBusiness business = new SalaVestibularBusiness();
           TbSala sala = db.BuscarPorID(id);
 
           business.DeletarPorSala(sala.IdSala);
@@ -50,27 +38,14 @@ namespace Vivencia19ManhaAPI.Business
        }
        public void Alterar(TbSala modelo)
        {
-           if(modelo.IdSala == 0)
-            throw new ArgumentException("O id nao pode ser igual a zero");
-            
-          else if(string.IsNullOrEmpty(modelo.NmLocal) == true)
-            throw new ArgumentException("Coloque o nome do local");
-
-          else if(string.IsNullOrEmpty(modelo.NmSala) == true)
-            throw new ArgumentException("Coloque o nome da sala");
-
-         else if(modelo.NrCapacidadeMaxima <= 0)
-            throw new ArgumentException("A capacidade maxima inválida");
-
-          else if( modelo.IdFuncionarioAlteracao <= 0)
-            throw new ArgumentException("Informe um funcionário");
+           ValidarID(modelo.IdSala);
+           ValidarSala(modelo);
 
            db.Alterar(modelo);
        }
        public TbSala BuscarPorID(int id)
        {
-            if(id == 0)
-          throw new ArgumentException("O id nao pode ser igual a zero");
+         ValidarID(id);
 
           TbSala sala = db.BuscarPorID(id);
           return sala;
@@ -85,9 +60,30 @@ namespace Vivencia19ManhaAPI.Business
          {
             return db.Consultar();
          }
-           
-          
+                    
        }
+       public void ValidarSala(TbSala modelo)
+         {
+            if(string.IsNullOrEmpty(modelo.NmLocal) == true)
+              throw new ArgumentException("Informe o nome do local.");
+
+              else if(modelo.NmLocal == "Selecione")
+            throw new ArgumentException("Selecione uma Instituição.");
+
+            else if(string.IsNullOrEmpty(modelo.NmSala) == true)
+              throw new ArgumentException("Informe o nome da sala.");
+
+            else if(modelo.NrCapacidadeMaxima <= 0)
+              throw new ArgumentException("Capacidade máxima inválida.");
+
+            else if( modelo.IdFuncionarioAlteracao <= 0)
+              throw new ArgumentException("Informe um funcionário.");
+         }
+         public void ValidarID(int id)
+         {
+            if(id <= 0)
+              throw new ArgumentException("Selecione uma sala.");
+         }
 
     }
 }

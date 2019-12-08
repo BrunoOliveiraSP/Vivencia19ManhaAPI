@@ -45,7 +45,7 @@ namespace Vivencia19ManhaAPI.Database
         }
         public List<Models.TbDisciplina> listaPorNome(string nome)
         {
-             List<Models.TbDisciplina> lista = db.TbDisciplina.Where(x => x.NmDisciplina.Contains(nome)).ToList();
+             List<Models.TbDisciplina> lista = db.TbDisciplina.Where(x => x.NmDisciplina.Contains(nome)).OrderBy(x => x.NmDisciplina).ToList();
              
              return lista;
         }

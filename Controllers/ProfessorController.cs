@@ -15,27 +15,57 @@ namespace Vivencia19ManhaAPI.Controllers
        Business.ProfessorBusiness bussines = new Business.ProfessorBusiness();
 
         [HttpPost]
-        // public ActionResult Inserir(Models.TbProfessor professor)
-        // {
-        //     try
-        //     {
-        //         bussines.Inserir(professor);
-        //         return Ok();    
-        //     }
-        //     catch (System.Exception ex)
-        //     {
-        //         ErrorModel erro = new ErrorModel(500, ex.Message);
-        //         return StatusCode(500, erro);
-        //     }
-        // }
-
-        [HttpPut]
-        public ActionResult Alterar(Models.TbProfessor professor)
+        public ActionResult<Models.ProfessorRequest> Inserir(Models.ProfessorRequest request)
         {
             try
             {
-                bussines.Alterar(professor);
-                return Ok();    
+                bussines.Inserir(request);
+                return request;    
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult<List<Models.ProfessorResponse>> ListarTodos()
+        {
+            try
+            {
+                List<Models.ProfessorResponse> lista = bussines.ListarTodos();
+                return lista;
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
+        }
+
+        [HttpGet("nome/{nome}")]
+        public ActionResult<List<Models.ProfessorResponse>> ListarPorNome(string nome)
+        {
+            try
+            {
+                List<Models.ProfessorResponse> lista = bussines.ListarPorNome(nome);
+                return lista;
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
+        }
+
+         [HttpPut]
+        public ActionResult<Models.ProfessorRequest> Alterar(Models.ProfessorRequest request)
+        {
+            try
+            {
+                bussines.Alterar(request);
+                return request;    
             }
             catch (System.Exception ex)
             {
@@ -58,43 +88,5 @@ namespace Vivencia19ManhaAPI.Controllers
                 return StatusCode(500, erro);
             }
         }
-
-        [HttpGet]
-        public ActionResult<List<Models.TbProfessor>> ListarTodos()
-        {
-            try
-            {
-                List<Models.TbProfessor> lista = bussines.ListarTodos();
-                return lista;
-            }
-            catch (System.Exception ex)
-            {
-                ErrorModel erro = new ErrorModel(500, ex.Message);
-                return StatusCode(500, erro);
-            }
-        }
-        [HttpGet("id/{Id}")]
-
-         public Models.TbProfessor ConsultarPotId(int Id)
-        {
-            return bussines.ConsultarPotId(Id);
-        }
-
-
-        [HttpGet("nome/{nome}")]
-	    public ActionResult<List<Models.TbProfessor>> ConsultarPporNome(string nome)
-	    {
-            try
-            {
-                List<Models.TbProfessor> list = bussines.ConsultarPorNome(nome);
-	    	    return list; 
-                
-            }
-            catch (System.Exception ex)
-            {
-                ErrorModel erro = new ErrorModel(500, ex.Message);
-                return StatusCode(500, erro);
-            }
-	    }
     }
 }

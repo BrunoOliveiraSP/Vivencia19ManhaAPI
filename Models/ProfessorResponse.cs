@@ -50,6 +50,8 @@ namespace Vivencia19ManhaAPI.Models
 
         public DateTime DtFaculdadeFim { get; set; }
 
-        public List<TbDisciplina> Disciplina { get; set; }
+        public List<TbDisciplina> DisciplinaProfessor { get; set; }
+
+        public List<TbDisciplina> DisciplinaDisponiveis { get; set; }
     }
 }

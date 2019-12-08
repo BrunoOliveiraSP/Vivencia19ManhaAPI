@@ -49,6 +49,7 @@ namespace Vivencia19ManhaAPI.Database
         {
             List<Models.TbProfessor> lista = db.TbProfessor
                                              .Include(x => x.TbProfessorDisciplina)
+                                             .OrderBy(x => x.NmProfessor)
                                              .ToList();
             return lista;
         }
@@ -57,6 +58,7 @@ namespace Vivencia19ManhaAPI.Database
 	    {
 		List<Models.TbProfessor> list = db.TbProfessor.Where(x => x.NmProfessor.Contains(nome))
                                         .Include(x => x.TbProfessorDisciplina)
+                                        .OrderBy(x => x.NmProfessor)
                                         .ToList();
 
 		return list;

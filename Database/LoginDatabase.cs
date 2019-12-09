@@ -49,13 +49,20 @@ namespace Vivencia19ManhaAPI.Database
             db.SaveChanges();
         }
 
-        public void ResetarSenha(int id)
+        public void ResetarSenha(Models.TbLogin login)
         {
-            Models.TbLogin login = db.TbLogin.FirstOrDefault(x => x.IdLogin == id);
+            Models.TbLogin antigo = db.TbLogin.FirstOrDefault(x => x.IdLogin == login.IdLogin);
 
-            login.DsSenha = "1234";
+            antigo.DsSenha = "1234";
 
             db.SaveChanges();
+        }
+
+        public Models.TbLogin VerificarSeExiste(Models.TbLogin login)
+        {
+            Models.TbLogin existe = db.TbLogin.FirstOrDefault(x => x.DsLogin == login.DsLogin);
+
+            return existe;
         }
     }
 }

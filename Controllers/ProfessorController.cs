@@ -74,6 +74,21 @@ namespace Vivencia19ManhaAPI.Controllers
             }
         }
 
+        [HttpPut("resetarsenha")]
+        public ActionResult ResetarSenha(Models.TbLogin login)
+        {
+            try
+            {
+                bussines.ResetarSenha(login);
+                return Ok();    
+            }
+            catch (System.Exception ex)
+            {
+                ErrorModel erro = new ErrorModel(500, ex.Message);
+                return StatusCode(500, erro);
+            }
+        }
+
         [HttpDelete("{id}")]
         public ActionResult Remover(int id)
         {

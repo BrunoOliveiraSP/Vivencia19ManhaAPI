@@ -39,7 +39,7 @@ namespace Vivencia19ManhaAPI.Database
 
         public List<Models.TbDisciplina> listar ()
         {
-            List<Models.TbDisciplina> listatudo = db.TbDisciplina.ToList(); 
+            List<Models.TbDisciplina> listatudo = db.TbDisciplina.OrderBy(x => x.NmDisciplina).ToList(); 
              
             return listatudo;
         }

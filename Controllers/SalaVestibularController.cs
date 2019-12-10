@@ -30,7 +30,8 @@ namespace Vivencia19ManhaAPI.Controllers
 
 
          [HttpGet]
-         public ActionResult<List<Models.SalaVestibularResponse1>> Consultar()
+        
+ public ActionResult<List<Models.SalaVestibularResponse1>> Consultar()
          {         
             
              try
@@ -43,7 +44,6 @@ namespace Vivencia19ManhaAPI.Controllers
                return StatusCode(500,erro);
             }
          }
-
 
           [HttpGet("{id}")]
          public ActionResult<Models.TbSalaVestibular> BuscarPorID(int id)

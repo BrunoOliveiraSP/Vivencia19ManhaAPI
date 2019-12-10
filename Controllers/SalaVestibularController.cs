@@ -30,7 +30,7 @@ namespace Vivencia19ManhaAPI.Controllers
 
 
          [HttpGet]
-         public ActionResult<List<Models.TbSalaVestibular>> Consultar()
+         public ActionResult<List<Models.SalaVestibularResponse1>> Consultar()
          {         
             
              try

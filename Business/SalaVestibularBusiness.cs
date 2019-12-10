@@ -19,10 +19,18 @@ namespace Vivencia19ManhaAPI.Business
           db.Inserir(modelo);
         }
 
-        public List<TbSalaVestibular> Consultar()
+        public List<SalaVestibularResponse1> Consultar()
        {
            List<TbSalaVestibular> salas = db.Consultar();
-           return salas;
+
+           List<SalaVestibularResponse1> response = new List<SalaVestibularResponse1>();
+
+           foreach(var item in salas)
+           {
+             SalaVestibularResponse1 r = CriarResponse(item);
+             response.Add(r);
+           }
+           return response;
        }
        public void Deletar(int id)
        {
@@ -73,6 +81,24 @@ namespace Vivencia19ManhaAPI.Business
           throw new ArgumentException("Selecione um período.");
 
           
+       }
+       public SalaVestibularResponse1 CriarResponse(TbSalaVestibular modelo)
+       {
+           SalaVestibularResponse1 response = new SalaVestibularResponse1();
+           
+           SalaBusiness salaBusiness = new SalaBusiness();
+           TbSala sala = salaBusiness.BuscarPorID(modelo.IdSala);
+
+           response.nmSala = sala.NmSala;
+           response.nmLocal = sala.NmLocal;
+           response.idSalaVestibular = modelo.IdSalaVestibular;
+           response.nrOrdem = modelo.NrOrdem;
+           response.qtInscritos = modelo.QtInscritos;
+           response.idSala = modelo.IdSala;
+           response.dsPeriodo = modelo.DsPeriodo;
+           response.idSalaNavigation = modelo.IdSalaNavigation;
+
+           return response;
        }
     }
 }

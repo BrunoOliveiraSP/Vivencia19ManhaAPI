@@ -79,16 +79,16 @@ namespace Vivencia19ManhaAPI.Business
             else if( modelo.IdFuncionarioAlteracao <= 0)
               throw new ArgumentException("Informe um funcionário.");
 
-              VerificarNome(modelo.NmSala);
+              VerificarNome(modelo);
          }
          public void ValidarID(int id)
          {
             if(id <= 0)
               throw new ArgumentException("Selecione uma sala.");
          }
-         private void VerificarNome(string nome)
+         private void VerificarNome(TbSala modelo)
          {
-           bool existe = db.VerificarNome(nome);
+           bool existe = db.VerificarNome(modelo);
 
            if(existe == true)
            throw new ArgumentException("Sala ja cadastrada, informe outro nome.");

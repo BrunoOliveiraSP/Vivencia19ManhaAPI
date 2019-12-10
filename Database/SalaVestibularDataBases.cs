@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Vivencia19ManhaAPI.Models;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Vivencia19ManhaAPI.Database
 {

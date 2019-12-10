@@ -53,9 +53,9 @@ namespace Vivencia19ManhaAPI.Database
          db.SaveChanges();
 
        }
-       public bool VerificarNome(string nome)
+       public bool VerificarNome(TbSala modelo)
        {
-           bool existe = db.TbSala.Any(t => t.NmSala.ToLower() == nome.ToLower() );
+           bool existe = db.TbSala.Any(t => t.NmSala.ToLower() == modelo.NmSala.ToLower() && t.NmLocal.ToLower() == modelo.NmLocal.ToLower() );
            return existe;
        }
        public TbSala BuscarPorNome(string nome)

@@ -78,9 +78,10 @@ namespace Vivencia19ManhaAPI.Business
             throw new ArgumentException("A quantidade de inscritos não pode ser igual a zero.");
           
           else if(modelo.DsPeriodo == "Selecione" || modelo.DsPeriodo == string.Empty)
-          throw new ArgumentException("Selecione um período.");
+            throw new ArgumentException("Selecione um período.");
 
-          
+          else if(db.VerificarSala(modelo) == true)
+            throw new ArgumentException("Sala ocupada, escolha algum horário diferente.");
        }
        public SalaVestibularResponse1 CriarResponse(TbSalaVestibular modelo)
        {

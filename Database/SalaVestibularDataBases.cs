@@ -16,11 +16,11 @@ namespace Vivencia19ManhaAPI.Database
         {
             db.TbSalaVestibular.Add(modelo);
             db.SaveChanges();
-            OrganizarOrdem();
         }
 
         public List<Models.TbSalaVestibular> Consultar()
        {
+           OrganizarOrdem();
            List<Models.TbSalaVestibular> salas = db.TbSalaVestibular.ToList();
            return salas;
        }
@@ -42,7 +42,6 @@ namespace Vivencia19ManhaAPI.Database
           sala.QtInscritos = modelo.QtInscritos;
           
          db.SaveChanges();
-         OrganizarOrdem();
        }
        public Models.TbSalaVestibular BuscarPorID(int id)
        {
@@ -61,14 +60,20 @@ namespace Vivencia19ManhaAPI.Database
        }
        public void OrganizarOrdem()
        {
-           List<TbSalaVestibular> salas = db.TbSalaVestibular.OrderBy(t => TimeSpan.Parse(t.DsPeriodo)).ToList();
-           int ordem = 1;
-           foreach(var item in salas)
-           {
-               item.NrOrdem = ordem;
-               Alterar(item);
-               ordem = ordem+1;
-           }
+            List<TbSalaVestibular> salas = db.TbSalaVestibular.OrderBy(t => t.DsPeriodo).ToList();
+
+            int ordem = 1;
+            foreach(TbSalaVestibular item in salas)
+            {
+                item.NrOrdem = ordem;
+                Alterar(item);
+                ordem++;
+            }
+       }
+       public bool VerificarSala(TbSalaVestibular modelo)
+       {
+           bool existe = db.TbSalaVestibular.Any(t => t.IdSala == modelo.IdSala && t.DsPeriodo == modelo.DsPeriodo);
+           return existe;
        }
     }
 }

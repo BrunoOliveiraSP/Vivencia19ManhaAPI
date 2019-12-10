@@ -40,9 +40,14 @@ namespace Vivencia19ManhaAPI.Database
         
         public List<TbAnoLetivo> ConsultarTodos()
         {
-            List<TbAnoLetivo> lista = db.TbAnoLetivo.ToList();
-            
+            List<TbAnoLetivo> lista = db.TbAnoLetivo.OrderBy(x => x.NrAno).ToList();
+
             return lista;
+        }
+
+        public bool AnoExiste(int ano, int IdAnoLetivo)
+        {
+            return db.TbAnoLetivo.Any(x => x.NrAno == ano && x.IdAnoLetivo != IdAnoLetivo);
         }
     }
 }

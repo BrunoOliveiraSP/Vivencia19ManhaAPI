@@ -18,10 +18,31 @@ namespace Vivencia19ManhaAPI.Business
             db.InserirTurma(modelo);
         }
 
-        public List<Models.TbTurma> ConsultarTurma()
+        public List<Models.TurmaResponse> ConsultarTurmaPorAnoLetivo(int idAnoLetivo)
         {
-             List<Models.TbTurma> lista = db.ConsultarTurma();
-             return lista;
+             List<Models.TbTurma> lista = db.ConsultarTurmaPorAnoLetivo(idAnoLetivo);
+
+             List<Models.TurmaResponse> response = new List<Models.TurmaResponse>();
+
+            foreach(Models.TbTurma turma in lista)
+            {
+                Models.TurmaResponse r = this.CriarResponse(turma);
+                response.Add(r);
+            }
+
+             return response;
+        }
+
+        private Models.TurmaResponse CriarResponse(Models.TbTurma turma)
+        {
+            Models.TurmaResponse response = new Models.TurmaResponse();
+            response.IdTurma = turma.IdTurma;
+            response.NmTurma = turma.NmTurma;
+            response.NrCapacidadeMax = turma.NrCapacidadeMax;
+            response.TpPeriodo = turma.TpPeriodo;
+            response.NmCurso = turma.IdCursoNavigation.NmCurso;
+
+            return response;
         }
 
         public void AlterarTurma(Models.TbTurma modelo)

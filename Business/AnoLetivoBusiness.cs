@@ -14,13 +14,24 @@ namespace Vivencia19ManhaAPI.Business
         public void Inserir(TbAnoLetivo anoLetivo)
         {
             if(anoLetivo.NrAno == 0)
-            throw new ArgumentException("Ano Obrigatório");
+            throw new ArgumentException("Ano Obrigatório!");
 
             if(anoLetivo.DtFim <= anoLetivo.DtInicio)
-            throw new ArgumentException("Data Final Inválida");
+            throw new ArgumentException("Data Final Inválida!");
 
             if(anoLetivo.TpStatus == string.Empty)
-            throw new ArgumentException("Status Obrigatório");
+            throw new ArgumentException("Status Obrigatório!");
+
+            bool anoExiste = database.AnoExiste(anoLetivo.NrAno, anoLetivo.IdAnoLetivo);
+
+            if(anoExiste == true)
+            throw new ArgumentException("Ano já existe!");
+
+            if(anoLetivo.DtInicio.Year != anoLetivo.NrAno)
+            throw new ArgumentException("Ano da data de Inicio é diferente de Ano!");
+
+            if(anoLetivo.DtFim.Year != anoLetivo.NrAno)
+            throw new ArgumentException("Ano da data Fim é diferente de Ano!");
 
             database.Inserir(anoLetivo);
         }
@@ -28,16 +39,27 @@ namespace Vivencia19ManhaAPI.Business
         public void Alterar(TbAnoLetivo anoLetivo)
         {
             if(anoLetivo.IdAnoLetivo == 0)
-            throw new ArgumentException("ID Inválido");
+            throw new ArgumentException("ID Inválido!");
 
             if(anoLetivo.NrAno == 0)
-            throw new ArgumentException("Ano Obrigatório");
+            throw new ArgumentException("Ano Obrigatório!");
 
             if(anoLetivo.DtFim <= anoLetivo.DtInicio)
-            throw new ArgumentException("Data Final Inválida");
+            throw new ArgumentException("Data Final Inválida!");
 
             if(anoLetivo.TpStatus == string.Empty)
-            throw new ArgumentException("Status Obrigatório");
+            throw new ArgumentException("Status Obrigatório!");
+
+            bool anoExiste = database.AnoExiste(anoLetivo.NrAno, anoLetivo.IdAnoLetivo);
+
+            if(anoExiste == true)
+            throw new ArgumentException("Ano já existe!");
+
+            if(anoLetivo.DtInicio.Year != anoLetivo.NrAno)
+            throw new ArgumentException("Ano da data de Inicio é diferente de Ano!");
+
+            if(anoLetivo.DtFim.Year != anoLetivo.NrAno)
+            throw new ArgumentException("Ano da data Fim é diferente de Ano!");
 
             database.Alterar(anoLetivo);
         }
@@ -45,7 +67,7 @@ namespace Vivencia19ManhaAPI.Business
         public void Deletar(int id)
         {
             if(id == 0)
-            throw new ArgumentException("ID Inválido");
+            throw new ArgumentException("ID Inválido!");
             
             database.Deletar(id);
         }

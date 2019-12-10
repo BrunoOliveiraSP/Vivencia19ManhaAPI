@@ -11,8 +11,6 @@ namespace Vivencia19ManhaAPI.Models
         public string TpPeriodo { get; set; }
         public int NrCapacidadeMax { get; set; }
 
-        public int NrAno { get; set; }
-
         public string NmCurso { get; set; }
     }
 }

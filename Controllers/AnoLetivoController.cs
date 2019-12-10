@@ -15,12 +15,12 @@ namespace Vivencia19ManhaAPI.Controllers
         Business.AnoLetivoBusiness business = new  Business.AnoLetivoBusiness();
 
         [HttpPost]
-        public ActionResult Inserir(Models.TbAnoLetivo anoLetivo)
+        public ActionResult<Models.TbAnoLetivo> Inserir(Models.TbAnoLetivo anoLetivo)
         {
             try
             {
                 business.Inserir(anoLetivo);
-                return Ok();    
+                return anoLetivo;    
             }
             catch (System.Exception ex)
             {

@@ -28,12 +28,13 @@ namespace Vivencia19ManhaAPI.Controllers
                 return StatusCode(500, erro);
             }
         }
-        [HttpGet]
-         public ActionResult<List<Models.TbTurma>> ConsultarTurma()
+
+        [HttpGet("{idAnoLetivo}")]
+         public ActionResult<List<Models.TurmaResponse>> ConsultarTurmaPorAnoLetivo(int idAnoLetivo)
         {
             try
             {
-                List<Models.TbTurma> lista =  business.ConsultarTurma();
+                List<Models.TurmaResponse> lista =  business.ConsultarTurmaPorAnoLetivo(idAnoLetivo);
                 return lista;    
             }
             catch (System.Exception ex)

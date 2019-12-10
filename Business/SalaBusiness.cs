@@ -93,6 +93,13 @@ namespace Vivencia19ManhaAPI.Business
            if(existe == true)
            throw new ArgumentException("Sala ja cadastrada, informe outro nome.");
          }
+         public TbSala BuscarPorNome(string nome)
+         {
+            if(string.IsNullOrEmpty(nome) == true || nome == "Selecione")
+              throw new ArgumentException("Selecione uma sala.");
+
+              return db.BuscarPorNome(nome);
+         }
 
     }
 }

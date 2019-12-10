@@ -19,7 +19,7 @@ namespace Vivencia19ManhaAPI.Database
        }
         public List<TbSala> Consultar()
        {
-           List<TbSala> salas = db.TbSala.OrderBy(t => t.NmSala).ToList();
+           List<TbSala> salas = db.TbSala.OrderBy(t => t.NmLocal).ToList();
            return salas;
        }
        public List<TbSala> ConsultarPorInstituicao(string nome)
@@ -57,6 +57,11 @@ namespace Vivencia19ManhaAPI.Database
        {
            bool existe = db.TbSala.Any(t => t.NmSala.ToLower() == nome.ToLower() );
            return existe;
+       }
+       public TbSala BuscarPorNome(string nome)
+       {
+           TbSala sala = db.TbSala.FirstOrDefault(t => t.NmSala == nome);
+           return sala;
        }
        
     }

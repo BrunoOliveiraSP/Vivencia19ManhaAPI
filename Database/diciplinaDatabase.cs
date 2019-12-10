@@ -37,19 +37,19 @@ namespace Vivencia19ManhaAPI.Database
             db.SaveChanges();
         }
 
-        public List<Models.TbDisciplina> listar ()
+        public List<Models.TbDisciplina> Listar ()
         {
             List<Models.TbDisciplina> listatudo = db.TbDisciplina.OrderBy(x => x.NmDisciplina).ToList(); 
              
             return listatudo;
         }
-        public List<Models.TbDisciplina> listaPorNome(string nome)
+        public List<Models.TbDisciplina> ListaPorNome(string nome)
         {
              List<Models.TbDisciplina> lista = db.TbDisciplina.Where(x => x.NmDisciplina.Contains(nome)).OrderBy(x => x.NmDisciplina).ToList();
              
              return lista;
         }
-        public List <Models.TbDisciplina> listarporsigla(string sigla)
+        public List <Models.TbDisciplina> ListarPorsigla(string sigla)
         {
             List<Models.TbDisciplina> listarporsigla=db.TbDisciplina.Where(V=>V.DsSigla.Contains(sigla)).ToList();
 

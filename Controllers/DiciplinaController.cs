@@ -12,12 +12,12 @@ namespace Vivencia19ManhaAPI.Controllers
     [Route("[controller]")]
     public class DiciplinaController : ControllerBase
     {
-        Business.DiciplinaBusiness busi = new Business.DiciplinaBusiness();
+        Business.DiciplinaBusiness business = new Business.DiciplinaBusiness();
 
         [HttpPut("Alterar")]
         public void Alterar(TbDisciplina disciplina)
         {
-            busi.Alterar(disciplina);
+            business.Alterar(disciplina);
         }
 
         [HttpPost("Inserir")]
@@ -25,7 +25,7 @@ namespace Vivencia19ManhaAPI.Controllers
         {
           try
           {
-              busi.Inserir(livro);
+              business.Inserir(livro);
               return livro;
           }
           catch(System.ArgumentException ex)
@@ -38,27 +38,27 @@ namespace Vivencia19ManhaAPI.Controllers
         [HttpDelete("Remover/{id}")]
         public void Remover (int id)
         {
-          busi.Remover(id);
+          business.Remover(id);
         }
 
         [HttpGet("ConsultarPorDisciplina/{nome}")]
-        public List<Models.TbDisciplina> listarPorNome (string nome)
+        public List<Models.TbDisciplina> ListarPorNome (string nome)
         {
-         List<Models.TbDisciplina> list = busi.ListarPorNome(nome);
+         List<Models.TbDisciplina> list = business.ListarPorNome(nome);
          return list;
         }
 
         [HttpGet("ConsultarTudo")]
         public List<Models.TbDisciplina> Listar()
         {
-          List<Models.TbDisciplina> list = busi.Listar();
+          List<Models.TbDisciplina> list = business.Listar();
           return list;
         }
 
         [HttpGet("Sigla/{sigla}")]
-        public List<Models.TbDisciplina> Listarporsigla(string sigla)
+        public List<Models.TbDisciplina> ListarPorsigla(string sigla)
         {
-                List<Models.TbDisciplina> Listarporsigla=busi.Listarporsigla(sigla);
+                List<Models.TbDisciplina> Listarporsigla = business.ListarPorsigla(sigla);
 
                 return Listarporsigla;
         }

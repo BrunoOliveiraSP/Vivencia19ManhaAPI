@@ -142,7 +142,7 @@ namespace Vivencia19ManhaAPI.Business
 
             response.DisciplinaProfessor = disciplinas;
 
-            List<Models.TbDisciplina> disponiveis = dbDisciplina.listar();
+            List<Models.TbDisciplina> disponiveis = dbDisciplina.Listar();
 
             foreach (Models.TbDisciplina item in response.DisciplinaProfessor)
             {

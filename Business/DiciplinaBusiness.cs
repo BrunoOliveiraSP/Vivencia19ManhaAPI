@@ -49,7 +49,6 @@ namespace Vivencia19ManhaAPI.Business
           throw new ArgumentException("id invalido");
            db.Deletar(id);
         }
-
         public List<Models.TbDisciplina> ListarPorNome (string nome)
         {
            List<Models.TbDisciplina> list = db.ListaPorNome(nome);
@@ -63,12 +62,19 @@ namespace Vivencia19ManhaAPI.Business
 
          }  
           
-          public List<Models.TbDisciplina> ListarPorsigla (string sigla)
-          {
-              List<Models.TbDisciplina>LIstarporsigla=db.ListarPorsigla(sigla);
+        public List<Models.TbDisciplina> ListarPorsigla (string sigla)
+        {
+            List<Models.TbDisciplina>LIstarporsigla=db.ListarPorsigla(sigla);
 
-              return LIstarporsigla;
-          }
+            return LIstarporsigla;
+        }
+
+        public List<Models.TbDisciplina> ListarDisciplina (string disciplina, string sigla)   
+        {
+            List<Models.TbDisciplina> ListarDisciplina = db.ListarDisciplina(disciplina, sigla);
+
+            return ListarDisciplina;
+        }
 
     }
 }

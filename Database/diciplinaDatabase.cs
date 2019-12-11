@@ -37,23 +37,37 @@ namespace Vivencia19ManhaAPI.Database
             db.SaveChanges();
         }
 
+       
         public List<Models.TbDisciplina> Listar ()
         {
             List<Models.TbDisciplina> listatudo = db.TbDisciplina.OrderBy(x => x.NmDisciplina.ToLower()).ToList(); 
              
             return listatudo;
         }
-        public List<Models.TbDisciplina> ListaPorNome(string nome)
+        public List<Models.TbDisciplina> ListaPorNome(string disciplina)
         {
-             List<Models.TbDisciplina> lista = db.TbDisciplina.Where(x => x.NmDisciplina.Contains(nome)).OrderBy(x => x.NmDisciplina).ToList();
+             List<Models.TbDisciplina> lista = db.TbDisciplina.Where(x => x.NmDisciplina.Contains(disciplina.ToLower()) || x.NmDisciplina.Contains(disciplina.ToUpper()))
+                                                              .OrderBy(x => x.NmDisciplina)
+                                                              .ToList();
              
              return lista;
         }
         public List <Models.TbDisciplina> ListarPorsigla(string sigla)
         {
-            List<Models.TbDisciplina> listarporsigla=db.TbDisciplina.Where(V=>V.DsSigla.Contains(sigla)).ToList();
+            List<Models.TbDisciplina> listarporsigla = db.TbDisciplina.Where(V => V.DsSigla.Contains(sigla.ToLower()) || V.DsSigla.Contains(sigla.ToUpper()))
+                                                                      .OrderBy(V => V.DsSigla)
+                                                                      .ToList();
 
             return listarporsigla;
+        }
+        public List<Models.TbDisciplina> ListarDisciplina(string disciplina, string sigla)
+        {
+            List<Models.TbDisciplina> ListarDisciplina = db.TbDisciplina.Where(x => x.NmDisciplina.Contains(disciplina, StringComparison.OrdinalIgnoreCase)
+                                                                                &&  x.DsSigla.Contains(sigla, StringComparison.OrdinalIgnoreCase))
+                                                                        .OrderBy(x => x.NmDisciplina)
+                                                                        .OrderBy(x => x.DsSigla)
+                                                                        .ToList();
+            return ListarDisciplina;
         }
     }
 }

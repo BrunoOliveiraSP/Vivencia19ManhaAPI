@@ -21,6 +21,7 @@ namespace Vivencia19ManhaAPI.Database
         {
             List<Models.TbTurma> lista = db.TbTurma.Where(x => x.IdAnoLetivo == idAnoLetivo)
                                                    .Include(x => x.IdCursoNavigation)
+                                                   .OrderBy(x => x.NmTurma)
                                                    .ToList();
             return lista;
         }

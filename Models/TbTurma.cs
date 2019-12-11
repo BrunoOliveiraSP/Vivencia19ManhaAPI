@@ -27,10 +27,8 @@ namespace Vivencia19ManhaAPI.Models
         public int IdCurso { get; set; }
         [Column("id_ano_letivo", TypeName = "int(11)")]
         public int IdAnoLetivo { get; set; }
-        [Required]
         [Column("nm_turma", TypeName = "varchar(50)")]
         public string NmTurma { get; set; }
-        [Required]
         [Column("tp_periodo", TypeName = "varchar(50)")]
         public string TpPeriodo { get; set; }
         [Column("nr_capacidade_max", TypeName = "int(11)")]

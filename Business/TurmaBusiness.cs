@@ -7,13 +7,19 @@ namespace Vivencia19ManhaAPI.Business
     {
         Database.TurmaDatabase db = new Database.TurmaDatabase();
 
-         public void InserirTurma(Models.TbTurma modelo)
+        public void InserirTurma(Models.TbTurma modelo)
         {
-           if(modelo.NmTurma == string.Empty)
-            throw new ArgumentException("Nome da Turma invalido");
+            if(modelo.IdAnoLetivo == 0)
+            throw new ArgumentException("Impossível criar ou alterar uma turma sem antes selecionar um Ano Letivo");
 
-            if(modelo.TpPeriodo == string.Empty)
-            throw new ArgumentException("unidade de tempo invalido");
+            if(modelo.TpPeriodo == string.Empty || modelo.TpPeriodo == "Selecione")
+            throw new ArgumentException("Selecione um período");
+            
+            if(modelo.NrCapacidadeMax == 0)
+            throw new ArgumentException("Capacidade maxima dever ser preenchida");
+
+            if(modelo.NmTurma == string.Empty)
+            throw new ArgumentException("Nome da Turma invalido");
 
             db.InserirTurma(modelo);
         }
@@ -36,28 +42,25 @@ namespace Vivencia19ManhaAPI.Business
         private Models.TurmaResponse CriarResponse(Models.TbTurma turma)
         {
             Models.TurmaResponse response = new Models.TurmaResponse();
-            response.IdTurma = turma.IdTurma;
-            response.NmTurma = turma.NmTurma;
+            response.NmCurso = turma.IdCursoNavigation.NmCurso;
             response.NrCapacidadeMax = turma.NrCapacidadeMax;
             response.TpPeriodo = turma.TpPeriodo;
-            response.NmCurso = turma.IdCursoNavigation.NmCurso;
+            response.IdTurma = turma.IdTurma;
+            response.NmTurma = turma.NmTurma;
 
             return response;
         }
 
         public void AlterarTurma(Models.TbTurma modelo)
         {
-             if(modelo.IdTurma == 0)
-            throw new ArgumentException("Id invalido");
+            if(modelo.IdAnoLetivo == 0)
+            throw new ArgumentException("Impossível criar ou alterar uma turma sem antes selecionar um Ano Letivo");
 
-            if(modelo.NmTurma == string.Empty)
-            throw new ArgumentException("Nome da Turma invalido");
+            if(modelo.TpPeriodo == string.Empty || modelo.TpPeriodo == "Selecione")
+            throw new ArgumentException("Selecione um período");
 
-            if(modelo.TpPeriodo == string.Empty)
-            throw new ArgumentException("unidade de tempo invalido");
-
-            if(modelo.NrCapacidadeMax == 0)
-            throw new ArgumentException("Id invalido");
+            if(modelo.IdTurma == 0)
+            throw new ArgumentException("ID Inválido");
 
             db.AlterarTurma(modelo);
         }

@@ -20,11 +20,11 @@ namespace Vivencia19ManhaAPI.Database
         {
             TbAnoLetivo alterar = db.TbAnoLetivo.FirstOrDefault(x => x.IdAnoLetivo == anoLetivo.IdAnoLetivo);
 
-            alterar.NrAno = anoLetivo.NrAno;
             alterar.DtInicio = anoLetivo.DtInicio;
-            alterar.DtFim = anoLetivo.DtFim;
-            alterar.BtAtivo = anoLetivo.BtAtivo;
             alterar.TpStatus = anoLetivo.TpStatus;
+            alterar.BtAtivo = anoLetivo.BtAtivo;
+            alterar.DtFim = anoLetivo.DtFim;
+            alterar.NrAno = anoLetivo.NrAno;
 
             db.SaveChanges();
         }

@@ -18,7 +18,8 @@ namespace Vivencia19ManhaAPI.Controller
             try
             {
             business.InserirCurso(curso);
-            return Ok();
+            
+            return curso;
             }
             catch (System.Exception ex)
             {
@@ -58,7 +59,7 @@ namespace Vivencia19ManhaAPI.Controller
         }
         
         
-        [HttpGet]
+        [HttpGet("ConsultarTodos/")]
         public ActionResult<List<Models.TbCurso>> ConsultarCurso()
         {
             try
@@ -74,12 +75,12 @@ namespace Vivencia19ManhaAPI.Controller
             }
         }
         
-        [HttpGet("ConsultarPorNome/{nome}")]
-        public ActionResult<List<Models.TbCurso>> ConsultarPorNome(string nome)
+        [HttpGet]
+        public ActionResult<List<Models.TbCurso>> Consultar(string nome, string sigla)
         {
             try
             {
-            List<Models.TbCurso> consulta = business.ConsultarPorNome(nome);
+            List<Models.TbCurso> consulta = business.ConsultarPorNomeSigla(nome, sigla);
 
             return consulta;
             }

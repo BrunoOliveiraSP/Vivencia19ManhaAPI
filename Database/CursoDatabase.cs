@@ -10,13 +10,21 @@ namespace Vivencia19ManhaAPI.Database
     {
         Models.db_a5064d_freiContext db = new Models.db_a5064d_freiContext();
 
-        public void InserirCurso(Models.TbCurso curso)
+        public Models.TbCurso InserirCurso(Models.TbCurso curso)
         {
             db.TbCurso.Add(curso);
 
             db.SaveChanges();
-        }
 
+            return curso;
+        }
+        
+        public bool Validarsigla(Models.TbCurso curso)
+        {
+            bool validar = db.TbCurso.Any(x => x.DsSigla == curso.DsSigla);
+
+            return validar;
+        }
         public bool ValidarNmCurso(Models.TbCurso curso)
         {
             bool validar = db.TbCurso.Any(x => x.NmCurso == curso.NmCurso);
@@ -39,8 +47,7 @@ namespace Vivencia19ManhaAPI.Database
             Models.TbCurso removerCurso = db.TbCurso.FirstOrDefault(x => x.IdCurso == id);
             db.Remove(removerCurso);
             db.SaveChanges();
-        } 
-
+        }
         public bool ValidarRemover(int id)
         {
             bool validar = db.TbCursoDisciplina.Any(x => x.IdCurso == id);
@@ -52,9 +59,10 @@ namespace Vivencia19ManhaAPI.Database
             List<Models.TbCurso> Listar = db.TbCurso.OrderBy(x => x.NmCurso).ToList();
             return Listar;
         }
-        public List<Models.TbCurso> ConsultarPorNome(string nome)
+        public List<Models.TbCurso> ConsultarPorNomeSigla(string nome, string sigla)
         {
-            List<Models.TbCurso> Consultar = db.TbCurso.Where(x => x.NmCurso.Contains(nome))
+            List<Models.TbCurso> Consultar = db.TbCurso.Where(x => x.NmCurso.Contains(nome)
+                                                            || x.DsSigla.Contains(sigla))
                                                        .OrderBy(x => x.NmCurso).ToList();
             return Consultar;
         }
